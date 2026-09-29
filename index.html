@@ -3,63 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Çok Yakında...</title>
+    <title>FazeCup | Çok Yakında</title>
     <style>
+        :root {
+            --bg-color: #050509; /* Çok koyu lacivert/siyah */
+            --primary-color: #ff3c00; /* Canlı Faze kırmızısı */
+            --secondary-color: #ffd700; /* Altın sarısı (vurgu) */
+            --text-color: #e0e0e0;
+            --sub-text-color: #888;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            position: relative;
         }
+
+        /* ARKA PLAN ANİMASYONU (Parçacık Efekti gibi) */
+        .background-dots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255, 60, 0, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: backgroundPan 60s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes backgroundPan {
+            from { background-position: 0 0; }
+            to { background-position: 1000px 1000px; }
+        }
+
+        /* ANA İÇERİK KUTUSU */
         .container {
             text-align: center;
+            z-index: 10;
             padding: 2rem;
-            max-width: 600px;
+            position: relative;
         }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-            background: linear-gradient(to right, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        p {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-        .badge {
+
+        /* FAZECUP LOGO TÜRÜ YAZI ANİMASYONU */
+        .brand-container {
+            position: relative;
             display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: rgba(56, 189, 248, 0.1);
-            color: #38bdf8;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            margin-bottom: 1rem;
+        }
+
+        .brand-name {
+            font-size: 5rem;
+            font-weight: 900;
+            letter-spacing: -2px;
             text-transform: uppercase;
+            position: relative;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--text-color);
+            animation: textGlow 4s ease-in-out infinite alternate;
+        }
+
+        .brand-name::before {
+            content: "FAZECUP";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: var(--text-color);
+            -webkit-text-stroke: 0px transparent;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            animation: logoFill 8s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.1); }
+            100% { text-shadow: 0 0 20px rgba(255, 60, 0, 0.5), 0 0 30px rgba(255, 60, 0, 0.3); }
+        }
+
+        @keyframes logoFill {
+            0%, 100% { clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%); }
+            40%, 60% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+        }
+
+        /* SLOGAN ANİMASYONU */
+        .slogan {
+            font-size: 1.5rem;
+            color: var(--sub-text-color);
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeIn 2s ease-out 1s forwards;
+        }
+
+        /* YÜKLENİYOR ÇUBUĞU ANİMASYONU */
+        .loader-container {
+            width: 100%;
+            max-width: 400px;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            margin: 0 auto;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeIn 2s ease-out 2s forwards;
+        }
+
+        .loader-bar {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            box-shadow: 0 0 10px var(--primary-color);
+            animation: progress 5s ease-in-out infinite;
+        }
+
+        /* YÜKLENİYOR YAZISI YANIP SÖNME */
+        .loading-text {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            margin-top: 0.5rem;
+            font-weight: 600;
             letter-spacing: 1px;
+            text-transform: uppercase;
+            animation: blink 1.5s infinite;
+            opacity: 0;
+            animation-name: fadeIn, blink;
+            animation-duration: 2s, 1.5s;
+            animation-delay: 2s, 2s;
+            animation-fill-mode: forwards, none;
+            animation-iteration-count: 1, infinite;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes progress {
+            0% { width: 0; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { opacity: 0.3; }
+        }
+
+        /* MOBİL UYUMLULUK */
+        @media (max-width: 768px) {
+            .brand-name { font-size: 3rem; }
+            .slogan { font-size: 1rem; }
         }
     </style>
+    <!-- Poppins Fontu ekleyelim -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Arka Plan Efekti -->
+    <div class="background-dots"></div>
+
     <div class="container">
-        <div class="badge">Çok Yakında</div>
-        <h1>Harika Şeyler Geliyor</h1>
-        <p>Web sitemiz şu anda hazırlık aşamasında. Çok yakında buradayız, takipte kalın!</p>
+        <!-- Logo Alanı -->
+        <div class="brand-container">
+            <div class="brand-name">FAZECUP</div>
+        </div>
+
+        <!-- Slogan -->
+        <p class="slogan">GELECEK YÜKLENİYOR...</p>
+
+        <!-- Yükleniyor Barı -->
+        <div class="loader-container">
+            <div class="loader-bar"></div>
+        </div>
+        <p class="loading-text">HAZIRLANIYORUZ</p>
     </div>
 
 </body>
