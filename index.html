@@ -3,376 +3,479 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fazecup Tech Portal & Web Utilities | Teknoloji, Donanim ve Web Araclari</title>
-<meta name="description" content="Fazecup Tech Portal: Web araclari, donanim rehberleri, yari iletken teknolojileri, RAM mimarisi ve isletim sistemi cekirdek yapilari.">
-<meta name="keywords" content="fazecup tech, web araclari, sifre olusturucu, metin analiz, sistem bilgisi, yari iletken, RAM mimarisi, DDR5, HBM, kernel, teknoloji blog">
+<title>Kelime Sayacı, Kredi Hesaplama, KDV, VKİ, QR Kod Oluşturucu | Fazecup Tech Araçlar</title>
+<meta name="description" content="Fazecup Tech: kelime sayacı, güçlü şifre oluşturucu, kredi hesaplama, KDV hesaplama, VKİ (vücut kitle indeksi), QR kod oluşturucu, renk seçici, Base64 çevirici ve teknoloji rehberleri. Tamamı ücretsiz, kayıtsız, hızlı.">
+<meta name="keywords" content="kelime sayacı, karakter sayacı, şifre oluşturucu, güçlü şifre, kredi hesaplama, kredi faiz hesaplama, kdv hesaplama, vki hesaplama, vücut kitle indeksi, qr kod oluşturucu, renk seçici, base64 çevirici, yüzde hesaplama, yaş hesaplama, teknoloji blog, donanım rehberi">
 <meta name="author" content="Fazecup Tech">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://fazecup.tech/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Fazecup Tech">
-<meta property="og:title" content="Fazecup Tech Portal & Web Utilities">
-<meta property="og:description" content="Teknoloji haberleri, donanim analizleri ve ucretsiz web araclari.">
+<meta property="og:title" content="Fazecup Tech: Ücretsiz Online Araçlar ve Teknoloji Rehberleri">
+<meta property="og:description" content="Kelime sayacı, kredi ve KDV hesaplama, QR kod oluşturucu, şifre üretici ve daha fazlası. Tamamı ücretsiz.">
 <meta property="og:url" content="https://fazecup.tech/">
-<meta property="og:image" content="https://fazecup.tech/og-cover.jpg">
 <meta property="og:locale" content="tr_TR">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Fazecup Tech Portal & Web Utilities">
-<meta name="twitter:description" content="Modern web araclari + derin teknik makaleler. Ucretsiz ve mobil uyumlu.">
-<meta name="twitter:image" content="https://fazecup.tech/og-cover.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fazecup Tech: Ücretsiz Online Araçlar">
+<meta name="twitter:description" content="Kelime sayacı, kredi/KDV/VKİ hesaplama, QR kod ve şifre üretici.">
 <meta name="theme-color" content="#0a0e17">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50' y='68' font-size='55' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>F</text></svg>">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Fazecup Tech","url":"https://fazecup.tech/","inLanguage":"tr"}</script>
+<!-- Google AdSense Hesap Doğrulama -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1869402564433410" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Fazecup Tech","url":"https://fazecup.tech/","inLanguage":"tr-TR","description":"Ücretsiz online araçlar ve teknoloji rehberleri"}</script>
 <style>
-:root{--bg:#0a0e17;--bg2:#0f1524;--card:#131b30;--border:#1e2a4a;--blue:#2563eb;--blue2:#3b82f6;--cyan:#22d3ee;--text:#e5e9f0;--muted:#94a3b8;--muted2:#64748b;--green:#22c55e;--radius:14px}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;background:radial-gradient(600px 400px at 15% 0%,rgba(37,99,235,.18),transparent),radial-gradient(700px 500px at 90% 20%,rgba(34,211,238,.10),transparent);pointer-events:none;z-index:0}
-a{color:var(--blue2);text-decoration:none}
-.container{max-width:1240px;margin:0 auto;padding:0 18px;position:relative;z-index:1}
-header{position:sticky;top:0;z-index:50;background:rgba(10,14,23,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.3rem}
-.logo-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--blue),#7c3aed);display:grid;place-items:center;font-weight:900;box-shadow:0 0 22px rgba(37,99,235,.6);color:#fff}
-.logo span b{color:var(--blue2)}
-.nav-links{display:flex;gap:22px;font-size:.95rem;font-weight:600}
-.nav-links a{color:var(--muted)}
-.nav-links a:hover{color:#fff;text-decoration:none}
-.badge-ads{display:flex;align-items:center;gap:8px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.35);color:#4ade80;font-size:.8rem;font-weight:700;padding:7px 12px;border-radius:999px;white-space:nowrap}
-.dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e;animation:pulse 1.8s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hamburger{display:none;background:none;border:1px solid var(--border);color:#fff;border-radius:8px;padding:7px 11px;font-size:1.1rem;cursor:pointer}
-.ad-label{font-size:.68rem;letter-spacing:1.5px;color:var(--muted2);text-transform:uppercase;text-align:center;margin-bottom:6px}
-.ad-box{background:linear-gradient(180deg,#101736,#0d1428);border:1px dashed #2b3b66;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--muted);min-height:90px;padding:12px;text-align:center;font-size:.85rem}
-.ad-leaderboard{margin:18px 0}
-.ad-leaderboard .ad-box{min-height:90px;max-width:728px;margin:0 auto;width:100%}
-.ad-inarticle{margin:22px 0}
-.btn{display:inline-block;background:linear-gradient(90deg,var(--blue),#1d4ed8);color:#fff;border:none;border-radius:10px;padding:11px 18px;font-weight:700;cursor:pointer;font-size:.92rem}
-.btn:hover{box-shadow:0 8px 24px rgba(37,99,235,.45)}
-.btn-ghost{background:#0a0e17;border:1px solid var(--border);color:var(--text)}
-.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:22px;padding:30px 0 10px}
-.hero-card{background:linear-gradient(135deg,#13204a 0%,#0f1524 60%);border:1px solid var(--border);border-radius:18px;padding:34px;position:relative;overflow:hidden}
-.hero-card h1{font-size:2.15rem;line-height:1.25;margin:12px 0}
-.hero-card h1 span{background:linear-gradient(90deg,var(--blue2),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero-card p{color:var(--muted);max-width:560px}
-.tag{display:inline-block;background:rgba(37,99,235,.15);border:1px solid rgba(59,130,246,.4);color:#93c5fd;font-size:.75rem;font-weight:700;padding:5px 12px;border-radius:999px}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
-.stat{background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center}
-.stat strong{display:block;font-size:1.3rem;color:#fff}
-.stat span{font-size:.78rem;color:var(--muted)}
-.layout{display:grid;grid-template-columns:1fr 320px;gap:24px;margin:24px 0 40px}
-.sec-title{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.sec-title h2{font-size:1.35rem}
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px}
-.grid-tools{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.tool-full{grid-column:1/-1}
-textarea{width:100%;min-height:130px;background:#0a0e17;border:1px solid var(--border);border-radius:10px;color:#e2e8f0;padding:12px;font-family:Consolas,monospace;font-size:.9rem;outline:none}
-textarea:focus{border-color:var(--blue)}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
-.metric{background:#0a0e17;border:1px solid var(--border);border-radius:10px;padding:10px;text-align:center}
-.metric strong{display:block;font-size:1.25rem;color:var(--cyan)}
-label{font-size:.85rem;color:var(--muted)}
-input[type=range]{width:100%;accent-color:var(--blue)}
-.checks{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
-.checks label{display:flex;align-items:center;gap:6px;background:#0a0e17;border:1px solid var(--border);padding:7px 11px;border-radius:999px;cursor:pointer;font-size:.85rem;color:var(--text)}
-.pass-output{background:#020617;border:1px solid var(--blue);border-radius:10px;padding:14px;font-family:Consolas,monospace;font-size:1rem;word-break:break-all;color:#a5f3fc;display:flex;justify-content:space-between;gap:10px;align-items:center}
-.strength{height:8px;background:#1e293b;border-radius:999px;overflow:hidden;margin-top:10px}
-.strength i{display:block;height:100%;width:10%;background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e);transition:.3s}
-.sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-.sys-item{background:#0a0e17;border:1px solid var(--border);border-radius:10px;padding:10px 12px}
-.sys-item small{display:block;color:var(--muted2);font-size:.7rem;text-transform:uppercase;letter-spacing:.8px}
-.sys-item strong{font-size:.88rem;word-break:break-word}
-.article h3{font-size:1.25rem;margin:8px 0}
-.article .meta{font-size:.8rem;color:var(--muted2);margin-bottom:10px}
-.article p,.article li{color:#cbd5e1;font-size:.94rem}
-.article h4{margin:14px 0 6px;color:#fff}
-.article ul{padding-left:20px;margin:8px 0}
-.toc{background:#0a0e17;border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin:12px 0;font-size:.88rem}
-details{background:#0a0e17;border:1px solid var(--border);border-radius:10px;margin:8px 0;padding:10px 14px}
-summary{cursor:pointer;font-weight:700;color:#fff}
-.sidebar{display:flex;flex-direction:column;gap:16px}
-.side-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px}
-.side-card li{padding:8px 0;border-bottom:1px solid #1a2542;font-size:.88rem;list-style:none}
-footer{border-top:1px solid var(--border);background:#070b14;padding:28px 0;margin-top:10px}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:18px}
-.foot-grid p,.foot-grid a{font-size:.86rem;color:var(--muted)}
-.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:18px;padding-top:14px;border-top:1px solid #162040;font-size:.8rem;color:var(--muted2)}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:100;align-items:center;justify-content:center;padding:16px}
-.modal.open{display:flex}
-.modal-box{background:#0f172a;border:1px solid var(--border);border-radius:16px;max-width:680px;width:100%;max-height:85vh;overflow:auto;padding:26px}
-.modal-box p,.modal-box li{font-size:.9rem;color:#cbd5e1}
-.cookie-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:90;background:#0f172a;border:1px solid var(--blue);border-radius:14px;padding:16px;display:none;gap:14px;align-items:center}
-.cookie-bar.show{display:flex}
-.cookie-bar p{font-size:.85rem;color:var(--muted)}
-.tool-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-.tool-tabs button{background:#0a0e17;border:1px solid var(--border);color:var(--muted);border-radius:999px;padding:8px 14px;font-size:.82rem;font-weight:700;cursor:pointer}
-.tool-tabs button.active{background:linear-gradient(90deg,var(--blue),#1d4ed8);color:#fff;border-color:transparent}
-.tool-pane{display:none}.tool-pane.active{display:block}
-.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-.aff-box{background:linear-gradient(135deg,#13204a,#0b1226);border:1px solid rgba(251,191,36,.4);border-radius:12px;padding:16px;margin:16px 0}
-.aff-box h4{color:#fbbf24;margin-bottom:6px}
-.share-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.share-row a{font-size:.8rem;font-weight:700;border:1px solid var(--border);border-radius:999px;padding:7px 13px;color:#fff;text-decoration:none}
-.progress-top{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan));width:0;z-index:99}
-#toTop{position:fixed;right:16px;bottom:80px;background:var(--blue);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:1.2rem;cursor:pointer;display:none;z-index:80;box-shadow:0 6px 20px rgba(37,99,235,.5)}
-.faq-item{background:#0a0e17;border:1px solid var(--border);border-radius:10px;margin:8px 0;padding:10px 14px}
-input[type=text],input[type=number],input[type=date],select{width:100%;background:#0a0e17;border:1px solid var(--border);border-radius:10px;color:#fff;padding:11px 13px;outline:none;margin:4px 0}
-table.data{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:10px}
-table.data th,table.data td{border:1px solid var(--border);padding:8px;text-align:left}
-table.data th{background:#0a0e17;color:#fff}
-@media(max-width:980px){.hero{grid-template-columns:1fr}.layout{grid-template-columns:1fr}.grid-tools{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1fr 1fr}.nav-links{display:none}.nav-links.mobile{display:flex;position:absolute;top:66px;left:0;right:0;background:#0b1226;flex-direction:column;padding:14px 20px;border-bottom:1px solid var(--border)}.hamburger{display:block}}
-@media(max-width:600px){.hero-card h1{font-size:1.6rem}.foot-grid{grid-template-columns:1fr}.cookie-bar{flex-direction:column;align-items:flex-start}}
-
-.metric span{font-size:.75rem;color:var(--muted)}
-
-<body>
-<div class="progress-top" id="pBar"></div>
-<button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-<header><div class="container nav">
-<div class="logo"><div class="logo-mark">F</div><span>Fazecup <b>Tech</b></span></div>
-<nav class="nav-links" id="navLinks">
-<a href="#araclar">Araclar</a><a href="#finans">Finans</a><a href="#donanim">Donanim</a><a href="#makaleler">Makaleler</a><a href="#sss">SSS</a><a href="#iletisim">Iletisim</a>
-</nav>
-<div style="display:flex;gap:10px;align-items:center">
-<div class="badge-ads"><span class="dot"></span>AdSense Hazir</div>
-<button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('mobile')">☰</button>
-</div></div></header>
-<div class="container">
-<div class="ad-leaderboard"><div class="ad-label">Reklam - Sponsorlu Alan (728x90 Responsive)</div>
-<div class="ad-box"><strong>Responsive Banner Reklam Alani</strong><small>Google AdSense kodunuzu buraya yapistirin</small>
-<!-- ADSENSE CODE HERE - LEADERBOARD 728x90 RESPONSIVE -->
-<!-- Ornek: <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX" crossorigin="anonymous"></script> -->
-<!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="YYYY" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
-<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-</div></div>
-<div class="hero">
-<div class="hero-card"><span class="tag">CYBERPUNK TECH PORTAL - 2026</span>
-<h1>Gelecegin Teknolojisi, <span>Web Araclari</span> ve Donanim Rehberi</h1>
-<p>Ucretsiz interaktif araclar, derin teknik makaleler ve guncel donanim analizleri. Hizli, mobil uyumlu ve reklama hazir altyapi.</p>
-<div class="hero-stats"><div class="stat"><strong>12+</strong><span>Ucretsiz Arac</span></div><div class="stat"><strong>4</strong><span>Derin Makale</span></div><div class="stat"><strong>%100</strong><span>Mobil Uyumlu</span></div></div>
-<div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap"><a href="#araclar" class="btn" style="text-decoration:none">Araclari Kesfet</a><a href="#makaleler" class="btn btn-ghost" style="text-decoration:none">Makaleleri Oku</a></div>
-</div>
-<div class="hero-side">
-<div class="card" style="padding:18px"><h4 style="margin-bottom:8px">Site Ici Ara</h4>
-<input id="siteSearch" type="text" placeholder="Makale veya arac ara..." style="width:100%;background:#0a0e17;border:1px solid var(--border);border-radius:10px;color:#fff;padding:11px 13px;outline:none">
-<div id="searchRes" style="font-size:.85rem;color:var(--muted);margin-top:8px">Orn: sifre, RAM, kernel...</div></div>
-<div class="card" style="padding:18px;border-color:rgba(34,197,94,.4)"><h4>SEO + AdSense Durumu</h4>
-<ul style="list-style:none;font-size:.85rem;color:var(--muted)"><li>✅ Meta + OpenGraph + Twitter Card</li><li>✅ Privacy Policy & Cerez Onayi</li><li>✅ 3 Reklam Yerlesimi Hazir</li><li>✅ Mobil + Hizli (Vanilla JS)</li></ul></div>
-</div></div>
-<div class="layout"><main>
-<section id="araclar"><div class="sec-title"><h2>Interaktif Web Araclari</h2></div>
-<div class="tool-tabs" id="toolTabs">
-<button class="active" onclick="showTool('t1',this)">Metin</button>
-<button onclick="showTool('t2',this)">Sifre</button>
-<button onclick="showTool('t3',this)">Sistem</button>
-<button onclick="showTool('t4',this)">QR</button>
-<button onclick="showTool('t5',this)">Renk</button>
-<button onclick="showTool('t6',this)">Base64</button>
-<button onclick="showTool('t7',this)">Kredi</button>
-<button onclick="showTool('t8',this)">VKI</button>
-<button onclick="showTool('t9',this)">Yas</button>
-<button onclick="showTool('t10',this)">Kronometre</button>
-</div>
-<div class="tool-pane active" id="t1">
-<div class="card"><h3>Canli Metin & Kod Analizcisi</h3>
-<p style="font-size:.85rem;color:var(--muted)">Kelime, karakter, satir ve okuma suresi.</p>
-<textarea id="textInput" placeholder="Metninizi veya kodunuzu buraya yapistirin...">Fazecup Tech Portal, modern web araclari ve teknik makaleler sunar.</textarea>
-<div class="metrics"><div class="metric"><strong id="mWord">0</strong><span>Kelime</span></div><div class="metric"><strong id="mChar">0</strong><span>Karakter</span></div><div class="metric"><strong id="mLine">0</strong><span>Satir</span></div><div class="metric"><strong id="mRead">0 sn</strong><span>Okuma Suresi</span></div></div>
-<div class="metrics" style="grid-template-columns:repeat(3,1fr)"><div class="metric"><strong id="mNoSpace">0</strong><span>Bosluksuz</span></div><div class="metric"><strong id="mSent">0</strong><span>Cumle</span></div><div class="metric"><strong id="mPara">0</strong><span>Paragraf</span></div></div>
-<div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-small btn-ghost" onclick="copyText()">Kopyala</button><button class="btn btn-small btn-ghost" onclick="clearText()">Temizle</button><button class="btn btn-small btn-ghost" onclick="upperText()">BUYUK</button><button class="btn btn-small btn-ghost" onclick="lowerText()">kucuk</button></div>
-</div>
-</div>
-<div class="tool-pane" id="t2">
-<div class="card"><h3>Guclu Sifre Olusturucu</h3>
-<p style="font-size:.85rem;color:var(--muted)">Uzunluk ve karakter secenekli guvenli sifre.</p>
-<label>Uzunluk: <b id="lenVal" style="color:#fff">16</b></label>
-<input type="range" id="passLen" min="6" max="64" value="16">
-<div class="checks"><label><input type="checkbox" id="cUpper" checked> A-Z</label><label><input type="checkbox" id="cLower" checked> a-z</label><label><input type="checkbox" id="cNum" checked> 0-9</label><label><input type="checkbox" id="cSym" checked> Sembol</label></div>
-<div class="pass-output"><span id="passOut">Sifre olusturun...</span><button class="btn btn-small" onclick="copyPass()">Kopyala</button></div>
-<div class="strength"><i id="strBar"></i></div>
-<p id="strTxt" style="font-size:.8rem;color:var(--muted);margin-top:6px">Sifre gucu: -</p>
-<div style="margin-top:10px;display:flex;gap:8px"><button class="btn" onclick="genPass()">Olustur</button><button class="btn btn-ghost" onclick="genPass()">Tekrar Uret</button></div>
-</div>
-</div>
-<div class="tool-pane" id="t3">
-<div class="card"><h3>Sistem Bilgi Ekrani</h3>
-<p style="font-size:.85rem;color:var(--muted)">Tarayici, ekran, baglanti ve isletim sistemi bilgileri (tamamen yerel, veri gonderilmez).</p>
-<div class="sys-grid">
-<div class="sys-item"><small>Isletim Sistemi</small><strong id="sOS">-</strong></div>
-<div class="sys-item"><small>Tarayici</small><strong id="sBrowser">-</strong></div>
-<div class="sys-item"><small>Ekran Cozunurlugu</small><strong id="sScreen">-</strong></div>
-<div class="sys-item"><small>Pencere Boyutu</small><strong id="sWindow">-</strong></div>
-<div class="sys-item"><small>Baglanti Turu</small><strong id="sConn">-</strong></div>
-<div class="sys-item"><small>Cekirdek Sayisi (CPU)</small><strong id="sCpu">-</strong></div>
-<div class="sys-item"><small>RAM (Tahmini)</small><strong id="sRam">-</strong></div>
-<div class="sys-item"><small>Dil / Saat Dilimi</small><strong id="sLang">-</strong></div>
-</div>
-<div style="margin-top:10px"><button class="btn btn-small btn-ghost" onclick="fillSys()">Bilgileri Yenile</button></div>
-</div>
-</div>
-<div class="tool-pane" id="t4"><div class="card"><h3>QR Kod Olusturucu</h3><p style="font-size:.85rem;color:var(--muted)">Link veya metinden gercek, taranabilir QR uret (ucretsiz API ile).</p><input type="text" id="qrText" placeholder="https://ornek.com" value="https://fazecup.tech"><div style="display:flex;gap:8px;margin:8px 0;flex-wrap:wrap"><button class="btn" onclick="makeQR()">QR Uret</button><button class="btn btn-ghost" onclick="dlQR()">PNG Indir</button></div><div style="background:#fff;border-radius:12px;padding:14px;display:inline-block"><img id="qrImg" width="220" height="220" alt="QR kod" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://fazecup.tech"></div><p id="qrMsg" style="font-size:.8rem;color:var(--muted)">Telefon kameranla okut, aninda acilir.</p></div></div>
-<div class="tool-pane" id="t5"><div class="card"><h3>Renk Secici + Palet</h3><div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><input type="color" id="colPick" value="#2563eb" style="width:70px;height:50px;border:none;background:none"><div><strong id="colHex">#2563EB</strong><div id="colRgb" style="font-size:.85rem;color:var(--muted)"></div></div><button class="btn btn-small" onclick="copyCol()">Kopyala</button><button class="btn btn-small btn-ghost" onclick="randPal()">Rastgele Palet</button></div><div id="palRow" style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px"></div></div></div>
-<div class="tool-pane" id="t6"><div class="card"><h3>Base64 Encode / Decode</h3><textarea id="b64In">Merhaba Fazecup!</textarea><div style="display:flex;gap:8px;margin:8px 0;flex-wrap:wrap"><button class="btn btn-small" onclick="b64e()">Encode</button><button class="btn btn-small btn-ghost" onclick="b64d()">Decode</button><button class="btn btn-small btn-ghost" onclick="copyB64()">Kopyala</button></div><textarea id="b64Out" placeholder="Sonuc..."></textarea></div></div>
-<div class="tool-pane" id="t7"><div class="card"><h3>Kredi Hesaplayici</h3><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div><label>Tutar (TL)</label><input type="number" id="krTutar" value="500000"></div><div><label>Aylik Faiz %</label><input type="number" id="krFaiz" value="3.5" step="0.01"></div><div><label>Vade (ay)</label><input type="number" id="krVade" value="36"></div><div><label>Masraf</label><input type="number" id="krMasraf" value="0"></div></div><button class="btn" style="margin-top:10px" onclick="calcKredi()">Hesapla</button><div class="kpi-row"><div class="metric"><strong id="krTaksit">-</strong><span>Aylik Taksit</span></div><div class="metric"><strong id="krToplam">-</strong><span>Toplam Odeme</span></div><div class="metric"><strong id="krMaliyet">-</strong><span>Toplam Faiz</span></div></div><div class="aff-box"><h4>En Uygun Kredi Teklifleri</h4><p style="font-size:.85rem;color:var(--muted)">Anlasmali bankalardan sana ozel oranlar. Basvuru ucretsizdir.</p><a href="#" class="btn btn-small" style="text-decoration:none">Teklifleri Gor</a><!-- AFFILIATE LINK HERE --></div></div></div>
-<div class="tool-pane" id="t8"><div class="card"><h3>VKI Hesaplayici</h3><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div><label>Boy (cm)</label><input type="number" id="vBoy" value="175"></div><div><label>Kilo (kg)</label><input type="number" id="vKilo" value="75"></div></div><button class="btn" style="margin-top:10px" onclick="calcVKI()">Hesapla</button><div class="kpi-row"><div class="metric"><strong id="vSonuc">-</strong><span>VKI</span></div><div class="metric"><strong id="vDurum">-</strong><span>Durum</span></div><div class="metric"><strong id="vIdeal">-</strong><span>Ideal Kilo</span></div></div></div></div>
-<div class="tool-pane" id="t9"><div class="card"><h3>Yas Hesaplayici</h3><label>Dogum Tarihi</label><input type="date" id="yasDate" value="2000-01-01"><button class="btn" style="margin-top:10px" onclick="calcYas()">Hesapla</button><div class="kpi-row"><div class="metric"><strong id="yasYil">-</strong><span>Yas</span></div><div class="metric"><strong id="yasGun">-</strong><span>Toplam Gun</span></div><div class="metric"><strong id="yasBurc">-</strong><span>Burc</span></div></div></div></div>
-<div class="tool-pane" id="t10"><div class="card"><h3>Kronometre</h3><div style="font-size:2.2rem;font-weight:800;text-align:center" id="kronoTxt">00:00.0</div><div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap"><button class="btn btn-small" onclick="kStart()">Baslat</button><button class="btn btn-small btn-ghost" onclick="kStop()">Durdur</button><button class="btn btn-small btn-ghost" onclick="kReset()">Sifirla</button></div></div></div>
-<section id="finans" style="margin-top:22px"><div class="sec-title"><h2>Finans Kosesi</h2></div><div class="card"><h3>KDV Hesaplayici</h3><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px"><div><label>Tutar</label><input type="number" id="kdvT" value="1000"></div><div><label>KDV %</label><select id="kdvO"><option>1</option><option>10</option><option selected>20</option></select></div><div><label>Islem</label><select id="kdvM"><option value="ekle">KDV Ekle</option><option value="cikar">KDV Cikar</option></select></div></div><button class="btn" style="margin-top:10px" onclick="calcKDV()">Hesapla</button><div class="kpi-row"><div class="metric"><strong id="kdvNet">-</strong><span>Net</span></div><div class="metric"><strong id="kdvTax">-</strong><span>KDV</span></div><div class="metric"><strong id="kdvBrut">-</strong><span>Brut</span></div></div></div></section>
-</section>
-<section id="makaleler"><div class="sec-title"><h2>SEO Uyumlu Teknik Makaleler</h2></div>
-<article class="card article" id="donanim">
-<span class="tag">DONANIM - 12 DK OKUMA</span>
-<h3>Gelecegin Yari Iletken Teknolojileri ve RAM Mimari Mimarisi</h3>
-<div class="meta">Yazar: Fazecup Tech Ekibi | Guncelleme: Eylul 2026 | Kategori: Donanim</div>
-<div class="toc"><b>Icerik:</b> 1. Giris 2. Yari iletken olceklenme 3. DDR5 ve LPDDR5X 4. HBM ve 3D bellek 5. CXL 6. SSS</div>
-<p>Yari iletken endustrisi, 3nm ve 2nm uretim surecleriyle guc verimliliginde yeni bir doneme girdi. Gate-All-Around (GAA) transistorler kacagi azaltirken, chiplet tasarimlar bellek bant genisligini islemciye yakinlastiriyor. Bu makalede RAM mimarisinin nasil evrildigini inceliyoruz.</p>
-<h4>1. Olceklenme Neden Yavasladi?</h4>
-<p>Moore Yasasi yavaslarken endustri 3D istiflemeye yoneldi. EUV litografi, SRAM hucrelerini kuculterek onbellek yogunlugunu artirdi. Sonuc: daha fazla cekirdek, daha dusuk watt basina performans maliyeti.</p>
-<h4>2. DDR5 ve LPDDR5X Gercegi</h4>
-<ul><li><b>DDR5-5600+:</b> Cift 32-bit alt kanal, on-die ECC, 1.1V calisma.</li><li><b>LPDDR5X:</b> 8533 MT/s hiz, mobil ve ince dizustulerde standart.</li><li><b>Secim:</b> Oyun icin CL30 DDR5, icerik uretimi icin 64GB+ kapasite oncelikli.</li></ul>
-<h4>3. HBM: Yapay Zekanin Bellek Motoru</h4>
-<p>HBM3e 1.2TB/s uzeri bant genisligi sunar. GPU ve AI hizlandiricilar bellegi islemci paketine tasiyarak gecikmeyi dusurur. 2026 sonrasi HBM4 ile 2048-bit arayuzler yayginlasacak.</p>
-</article>
-<div class="ad-inarticle"><div class="ad-label">Reklam - Icerik Arasi (In-Article Responsive)</div>
-<div class="ad-box"><strong>In-Article Reklam Alani</strong><small>Okuma akisini bolmeden gelir uretir</small>
-<!-- ADSENSE CODE HERE - IN-ARTICLE -->
-<!-- <ins class="adsbygoogle" style="display:block;text-align:center" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-XXXX" data-ad-slot="YYYY"></ins> -->
-<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-</div></div>
-<article class="card article">
-<span class="tag">ISLETIM SISTEMI - 10 DK OKUMA</span>
-<h3>Bagimsiz Isletim Sistemi (OS) Mimarileri ve Kernel Yapilari</h3>
-<div class="meta">Yazar: Fazecup Tech Ekibi | Guncelleme: Eylul 2026 | Kategori: Yazilim</div>
-<div class="toc"><b>Icerik:</b> 1. Kernel nedir 2. Monolitik vs Mikro 3. Hibrit 4. Zamanlama 5. Guvenlik 6. SSS</div>
-<p>Kernel, donanim ile yazilim arasindaki ko­prudur. Surec yonetimi, bellek yonetimi, dosya sistemi ve aygit suruculeri cekirdegin temel gorevleridir. Dogru mimari secimi performansi ve guvenligi belirler.</p>
-<h4>1. Monolitik Kernel (Linux)</h4>
-<p>Tum servisler tek adres alaninda calisir. Avantaj: hizli sistem cagrilari. Dezavantaj: bir surucu hatasi sistemi coker­tebilir. Linux bu riski moduler yapi ve eBPF ile azaltir.</p>
-<h4>2. Mikro Kernel (seL4, Zircon)</h4>
-<p>Sadece zamanlama ve IPC cekirdekte; suruculer kullanici alanında. Avantaj: yuksek izolasyon. Ornek: QNX otomativde, seL4 formal dogrulamali guvenlikte one cikar.</p>
-<h4>3. Hibrit Kernel (Windows NT, XNU)</h4>
-<p>Performans ile modulari­teyi dengeler. Windows NT hibrit cekirdek + HAL katmani kullanir; macOS XNU Mach + BSD bilesimidir.</p>
-<details><summary>SSS: Hangi kernel daha hizli?</summary><p>Monolitik kernel sistem cagrilarinda genellikle daha hizlidir; mikro kernel guvenlik ve kararlilikta one cikar. Hibrit ikisini dengeler.</p></details>
-<details><summary>SSS: Kendi OS projeme nereden baslamaliyim?</summary><p>Multiboot + basit zamanlayici + seri port loglama ile baslayin. Sonra fiziksel bellek yoneticisi ve round-robin zamanlayici ekleyin.</p></details>
-</article>
-<article class="card article">
-<span class="tag">FINANS - 8 DK OKUMA</span>
-<h3>2026'da Internetten Para Kazanmanin 7 Gercek Yolu</h3>
-<div class="meta">Yazar: Fazecup Tech Ekibi | Guncelleme: Eylul 2026 | Kategori: Finans</div>
-<p>Yuksek CPC'li finans nişinde dogru stratejiyle blog, YouTube ve freelance birlesimi aylik duzenli gelir uretir. Iste test edilmis 7 yontem:</p>
-<ul><li><b>1. Nis blog + AdSense:</b> Kredi, sigorta, hosting gibi yuksek tik basi kazanc konularina odaklanin.</li><li><b>2. Affiliate:</b> Banka, hosting ve yazilim urunlerinde %20-50 komisyon alin.</li><li><b>3. Freelance:</b> Metin yazarligi ve web tasarim ile ilk geliri hizli elde edin.</li><li><b>4. Dijital urun:</b> E-kitap ve sablon satin, stoksuz calisin.</li><li><b>5. YouTube Shorts + uzun video:</b> Finans ve teknoloji icerikleri yuksek RPM verir.</li><li><b>6. Bulten:</b> E-posta listesi kurun, sponsorlu gonderiler yayinlayin.</li><li><b>7. Arac siteleri:</b> Bu sitedeki gibi hesaplayici ve generator araclariyla organik trafik cekin.</li></ul>
-<div class="share-row"><span style="font-size:.82rem;color:var(--muted)">Paylas:</span><a href="https://twitter.com/intent/tweet?text=Fazecup+Tech" target="_blank">X</a><a href="https://www.facebook.com/sharer/sharer.php?u=https://fazecup.tech" target="_blank">Facebook</a><a href="https://wa.me/?text=https://fazecup.tech" target="_blank">WhatsApp</a><a href="https://t.me/share/url?url=https://fazecup.tech" target="_blank">Telegram</a></div>
-</article>
-<div class="ad-inarticle"><div class="ad-label">Reklam - Multiplex / Esnek</div><div class="ad-box"><strong>Multiplex Reklam Alani</strong><small>Yuksek doluluk, otomatik boyut</small>
-<!-- ADSENSE CODE HERE - MULTIPLEX -->
-<!-- <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-XXXX" data-ad-slot="YYYY"></ins> -->
-<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-</div></div>
-<article class="card article">
-<span class="tag">REHBER - 6 DK OKUMA</span>
-<h3>Kredi Cekerken Faiz Hesabi Nasil Yapilir? (2026 Rehberi)</h3>
-<div class="meta">Yazar: Fazecup Tech Ekibi | Guncelleme: Eylul 2026 | Kategori: Finans</div>
-<p>Aylik taksit formulu: <b>Taksit = P x r / (1 - (1+r)^-n)</b>. P: ana para, r: aylik faiz, n: vade. Ornek: 500.000 TL, %3.5 faiz, 36 ay = yaklasik 25.500 TL taksit. Yukaridaki <a href="#araclar">Kredi Hesaplayici</a> ile kendi senaryonu dene. Dosya masrafi ve sigortayi toplam maliyete eklemeyi unutma.</p>
-</article></section>
-</main>
-<aside class="sidebar">
-<div><div class="ad-label">Reklam - Sidebar (300x250 / 300x600)</div>
-<div class="ad-box sticky" style="min-height:250px"><strong>Sticky Sidebar Reklam</strong><small>Kaydirirken sabit kalir, yuksek gelir alani</small>
-<!-- ADSENSE CODE HERE - SIDEBAR 300x250 / 300x600 -->
-<!-- <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXX" data-ad-slot="YYYY"></ins> -->
-<!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
-</div></div>
-<div class="side-card"><h4>Populer Araclar</h4><ul>
-<li><a href="#araclar">Metin & Kod Analizcisi</a></li>
-<li><a href="#araclar">Sifre Olusturucu</a></li>
-<li><a href="#araclar">Sistem Bilgi Ekrani</a></li></ul></div>
-<div class="side-card"><h4>Son Makaleler</h4><ul>
-<li><a href="#donanim">Yari Iletken ve RAM Mimarisi</a></li>
-<li><a href="#makaleler">OS Mimarileri ve Kernel</a></li></ul></div>
-<div class="side-card"><h4>Bulten</h4><p style="font-size:.85rem;color:var(--muted)">Haftalik teknoloji ozeti.</p><div style="display:flex;gap:8px;margin-top:8px"><input id="nlMail" type="text" placeholder="E-posta" style="flex:1;background:#0a0e17;border:1px solid var(--border);border-radius:8px;color:#fff;padding:9px;min-width:0"><button class="btn btn-small" onclick="subscribe()">Katil</button></div>
-<p id="nlMsg" style="font-size:.8rem;color:#4ade80;margin-top:6px"></p></div>
-<div class="side-card"><h4>Hizli Erisim</h4><ul><li><a href="#finans">KDV Hesaplayici</a></li><li><a href="#sss">SSS</a></li></ul></div>
-</aside></div>
-<section id="sss" style="margin-bottom:30px"><div class="sec-title"><h2>Sik Sorulan Sorular</h2></div><div class="card"><div class="faq-item"><b>Bu araclar ucretsiz mi?</b><p style="font-size:.88rem;color:var(--muted)">Evet, tum araclar ucretsiz ve kayit gerektirmez.</p></div><div class="faq-item"><b>Sifrelerim sunucuya gidiyor mu?</b><p style="font-size:.88rem;color:var(--muted)">Hayir, tum islemler tarayicinizda yapilir.</p></div></div></section>
-</div>
-<footer id="iletisim"><div class="container">
-<div class="foot-grid"><div><div class="logo" style="margin-bottom:10px"><div class="logo-mark">F</div><span>Fazecup <b>Tech</b></span></div>
-<p>Teknoloji portali ve ucretsiz web araclari. Hizli, guvenli ve mobil uyumlu tek dosyalik deneyim.</p></div>
-<div><h4>Kurumsal</h4><p><a href="#" onclick="openModal('aboutModal');return false">Hakkimizda</a><br><a href="#" onclick="openModal('contactModal');return false">Iletisim</a><br><a href="#makaleler">Blog</a></p></div>
-<div><h4>Yasal</h4><p><a href="#" onclick="openModal('privacyModal');return false">Gizlilik Politikasi</a><br><a href="#" onclick="openModal('cookieModal');return false">Cerez Politikasi</a><br><a href="#" onclick="openModal('termsModal');return false">Kullanim Sartlari</a></p></div>
-<div><h4>Kategoriler</h4><p><a href="#araclar">Araclar</a><br><a href="#donanim">Donanim</a><br><a href="#makaleler">Makaleler</a></p></div></div>
-<div class="foot-bottom"><span>© 2026 Fazecup Tech. Tum haklari saklidir.</span><span>AdSense Uyumlu - Privacy + Cookies + Responsive Ads</span></div>
-</div></footer>
-<div class="modal" id="privacyModal"><div class="modal-box"><h3>Gizlilik Politikasi</h3>
-<p>Bu site kisisel verilerinizi korumayi taahhut eder. Iletisim ve bulten disinda veri toplamayiz.</p>
-<ul><li><b>Toplanan veriler:</b> E-posta (bulten), anonim kullanim istatistikleri.</li><li><b>Reklam:</b> Google AdSense cerezleri kullanilabilir.</li><li><b>Ucuncu taraf:</b> Veriler satilmaz.</li><li><b>Iletisim:</b> privacy@fazecup.tech</li></ul>
-<div style="margin-top:12px"><button class="btn" onclick="closeModal('privacyModal')">Kapat</button></div></div></div>
-<div class="modal" id="cookieModal"><div class="modal-box"><h3>Cerez Politikasi</h3>
-<p>Zorunlu cerezler sitenin calismasi icin gereklidir. Analitik ve reklam cerezleri icin onayiniz alinir.</p>
-<ul><li><b>Zorunlu:</b> Cerez onayi tercihi.</li><li><b>Analitik:</b> Ziyaret istatistikleri.</li><li><b>Reklam:</b> AdSense kisisellestirme.</li></ul>
-<div style="margin-top:12px;display:flex;gap:8px"><button class="btn" onclick="acceptCookies()">Kabul Et</button><button class="btn btn-ghost" onclick="closeModal('cookieModal')">Kapat</button></div></div></div>
-<div class="modal" id="aboutModal"><div class="modal-box"><h3>Hakkimizda</h3><p>Fazecup Tech, bagimsiz bir teknoloji yayinidir. Amacimiz karmasik donanim ve yazilim konularini sade ve uygulanabilir sekilde anlatmaktir.</p><div style="margin-top:12px"><button class="btn" onclick="closeModal('aboutModal')">Kapat</button></div></div></div>
-<div class="modal" id="contactModal"><div class="modal-box"><h3>Iletisim</h3><p>E-posta: info@fazecup.tech</p><p>Reklam ve isbirligi icin ayni adrese yazabilirsiniz.</p><div style="margin-top:12px"><button class="btn" onclick="closeModal('contactModal')">Kapat</button></div></div></div>
-<div class="modal" id="termsModal"><div class="modal-box"><h3>Kullanim Sartlari</h3><p>Araclar egitim amaclidir. Uretilen sifreleri guvenli bir yonetici ile saklayin. Icerikler kaynak gosterilerek alin­tilanabilir.</p><div style="margin-top:12px"><button class="btn" onclick="closeModal('termsModal')">Kapat</button></div></div></div>
-<div class="cookie-bar" id="cookieBar"><p><b style="color:#fff">Cerez kullaniyoruz.</b> Deneyimi iyilestirmek ve reklam geliri icin cerez kullanilir. Detay icin Cerez Politikasi'na bakin.</p>
-<div style="display:flex;gap:8px;flex-shrink:0"><button class="btn btn-small" onclick="acceptCookies()">Kabul Et</button><button class="btn btn-small btn-ghost" onclick="openModal('cookieModal')">Detay</button></div></div>
-<script>
-const $=id=>document.getElementById(id);
-// Metin analiz
-function analyze(){const t=$('textInput').value;const chars=t.length;const nospace=t.replace(/\s/g,'').length;const words=(t.trim().match(/\S+/g)||[]).length;const lines=t==='' ?0:t.split('\n').length;const sent=(t.match(/[^.!?]+[.!?]+/g)||[]).length;const para=t.trim()==='' ?0:t.trim().split(/\n\s*\n|\n/).filter(x=>x.trim()!=='').length;const sec=Math.ceil(words/200*60);$('mWord').textContent=words;$('mChar').textContent=chars;$('mNoSpace').textContent=nospace;$('mLine').textContent=lines;$('mSent').textContent=sent;$('mPara').textContent=para;$('mRead').textContent=sec<60?sec+' sn':Math.floor(sec/60)+' dk '+(sec%60)+' sn';}
-$('textInput').addEventListener('input',analyze);
-function copyText(){$('textInput').select();document.execCommand('copy');alert('Metin kopyalandi');}
-function clearText(){$('textInput').value='';analyze();}
-function upperText(){$('textInput').value=$('textInput').value.toUpperCase();analyze();}
-function lowerText(){$('textInput').value=$('textInput').value.toLowerCase();analyze();}
-// Sifre
-$('passLen').addEventListener('input',e=>{$('lenVal').textContent=e.target.value;genPass();});
-['cUpper','cLower','cNum','cSym'].forEach(id=>$(id).addEventListener('change',genPass));
-function genPass(){let len=parseInt($('passLen').value,10);let pool='';if($('cUpper').checked)pool+='ABCDEFGHIJKLMNOPQRSTUVWXYZ';if($('cLower').checked)pool+='abcdefghijklmnopqrstuvwxyz';if($('cNum').checked)pool+='0123456789';if($('cSym').checked)pool+='!@#$%^&*()-_=+[]{};:,.<>?';if(!pool){$('passOut').textContent='En az bir tur secin';return;}let out='';const rnd=new Uint32Array(len);crypto.getRandomValues(rnd);for(let i=0;i<len;i++)out+=pool[rnd[i]%pool.length];$('passOut').textContent=out;const score=Math.min(100,len*4+( $('cSym').checked?20:0)+( $('cNum').checked?10:0));$('strBar').style.width=score+'%';$('strTxt').textContent='Sifre gucu: '+(score<40?'Zayif':score<70?'Orta':'Guclu')+' ('+score+'/100)';}
-function copyPass(){const t=$('passOut').textContent;navigator.clipboard.writeText(t).then(()=>alert('Sifre kopyalandi')); }
-// Sistem
-function fillSys(){const ua=navigator.userAgent;let os='Bilinmiyor';if(/Windows/i.test(ua))os='Windows';else if(/Android/i.test(ua))os='Android';else if(/iPhone|iPad/i.test(ua))os='iOS';else if(/Mac/i.test(ua))os='macOS';else if(/Linux/i.test(ua))os='Linux';let br='Bilinmiyor';if(/Edg/i.test(ua))br='Edge';else if(/Chrome/i.test(ua))br='Chrome';else if(/Firefox/i.test(ua))br='Firefox';else if(/Safari/i.test(ua))br='Safari';$('sOS').textContent=os;$('sBrowser').textContent=br+' ('+navigator.platform+')';$('sScreen').textContent=screen.width+'x'+screen.height+' ('+screen.colorDepth+'bit)';$('sWindow').textContent=innerWidth+'x'+innerHeight;$('sConn').textContent=(navigator.connection&&navigator.connection.effectiveType)||'Bilinmiyor';$('sCpu').textContent=navigator.hardwareConcurrency||'Bilinmiyor';$('sRam').textContent=navigator.deviceMemory?('~'+navigator.deviceMemory+' GB'):'Tarayici paylasmiyor';$('sLang').textContent=navigator.language+' / '+(Intl.DateTimeFormat().resolvedOptions().timeZone||'-');}
-window.addEventListener('resize',fillSys);
-// Arama
-$('siteSearch').addEventListener('input',e=>{const q=e.target.value.toLowerCase();const items=[['Metin Analizcisi','#araclar'],['Sifre Olusturucu','#araclar'],['Sistem Bilgisi','#araclar'],['QR Kod','#araclar'],['Kredi Hesaplayici','#araclar'],['VKI','#araclar'],['KDV','#finans'],['RAM Mimarisi','#donanim'],['Kernel / OS','#makaleler'],['Para Kazanma','#makaleler']];const f=items.filter(x=>x[0].toLowerCase().includes(q));$('searchRes').innerHTML=q===''?'Orn: sifre, RAM, kernel...':(f.length?f.map(x=>'<a href="'+x[1]+'">'+x[0]+'</a>').join(' | '):'Sonuc bulunamadi');});
-function showTool(id,btn){document.querySelectorAll('.tool-pane').forEach(p=>p.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('#toolTabs button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');}
-// QR (gercek taranabilir QR - goqr.me ucretsiz API)
-function makeQR(){const t=($('qrText').value||'https://fazecup.tech').trim();$('qrImg').src='https://api.qrserver.com/v1/create-qr-code/?size=220x220&data='+encodeURIComponent(t);$('qrMsg').textContent='QR uretildi: '+t.slice(0,60);}
-function dlQR(){const a=document.createElement('a');a.download='fazecup-qr.png';a.href=$('qrImg').src;a.target='_blank';a.click();}
-// Renk
-function hexRgb(h){h=h.replace('#','');return [parseInt(h.substr(0,2),16),parseInt(h.substr(2,2),16),parseInt(h.substr(4,2),16)];}
-$('colPick').addEventListener('input',e=>{const v=e.target.value.toUpperCase();$('colHex').textContent=v;const r=hexRgb(v);$('colRgb').textContent='rgb('+r.join(', ')+')';});
-function copyCol(){navigator.clipboard.writeText($('colHex').textContent).then(()=>alert('Renk kopyalandi'));}
-function randPal(){const row=$('palRow');row.innerHTML='';for(let i=0;i<5;i++){const c='#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0');const d=document.createElement('div');d.style.cssText='background:'+c+';border-radius:8px;padding:22px 6px;text-align:center;font-size:.7rem;color:#fff;cursor:pointer';d.textContent=c;d.onclick=()=>{navigator.clipboard.writeText(c);alert(c+' kopyalandi');};row.appendChild(d);}}
-// Base64 (Turkce uyumlu)
-function b64e(){try{$('b64Out').value=btoa(unescape(encodeURIComponent($('b64In').value)));}catch(e){$('b64Out').value='Hata: '+e.message;}}
-function b64d(){try{$('b64Out').value=decodeURIComponent(escape(atob($('b64In').value.trim())));}catch(e){$('b64Out').value='Gecersiz Base64';}}
-function copyB64(){navigator.clipboard.writeText($('b64Out').value).then(()=>alert('Kopyalandi'));}
-// Kredi
-function calcKredi(){const P=parseFloat($('krTutar').value)||0,r=(parseFloat($('krFaiz').value)||0)/100,n=parseInt($('krVade').value)||1,m=parseFloat($('krMasraf').value)||0;const taksit=r===0?P/n:P*r/(1-Math.pow(1+r,-n));const toplam=taksit*n+m;$('krTaksit').textContent=taksit.toLocaleString('tr-TR',{maximumFractionDigits:0})+' TL';$('krToplam').textContent=toplam.toLocaleString('tr-TR',{maximumFractionDigits:0})+' TL';$('krMaliyet').textContent=(toplam-P).toLocaleString('tr-TR',{maximumFractionDigits:0})+' TL';}
-function calcVKI(){const b=(parseFloat($('vBoy').value)||0)/100,k=parseFloat($('vKilo').value)||0;if(!b)return;const v=k/(b*b);$('vSonuc').textContent=v.toFixed(1);$('vDurum').textContent=v<18.5?'Zayif':v<25?'Normal':v<30?'Kilolu':'Obez';$('vIdeal').textContent=(22*b*b).toFixed(0)+' kg';}
-function calcYas(){const d=new Date($('yasDate').value);if(isNaN(d))return;const now=new Date();let y=now.getFullYear()-d.getFullYear();const md=now.getMonth()-d.getMonth();if(md<0||(md===0&&now.getDate()<d.getDate()))y--;const gun=Math.floor((now-d)/86400000);$('yasYil').textContent=y;$('yasGun').textContent=gun.toLocaleString('tr-TR');const m=d.getMonth()+1,dd=d.getDate();const burc=(m==1&&dd>=20||m==2&&dd<=18)?'Kova':(m==2&&dd>=19||m==3&&dd<=20)?'Balik':(m==3&&dd>=21||m==4&&dd<=19)?'Koc':(m==4&&dd>=20||m==5&&dd<=20)?'Boga':(m==5&&dd>=21||m==6&&dd<=20)?'Ikizler':(m==6&&dd>=21||m==7&&dd<=22)?'Yengec':(m==7&&dd>=23||m==8&&dd<=22)?'Aslan':(m==8&&dd>=23||m==9&&dd<=22)?'Basak':(m==9&&dd>=23||m==10&&dd<=22)?'Terazi':(m==10&&dd>=23||m==11&&dd<=21)?'Akrep':(m==11&&dd>=22||m==12&&dd<=21)?'Yay':'Oglak';$('yasBurc').textContent=burc;}
-function calcKDV(){const t=parseFloat($('kdvT').value)||0,o=parseFloat($('kdvO').value)||20,m=$('kdvM').value;let net,tax,brut;if(m==='ekle'){net=t;tax=t*o/100;brut=t+tax;}else{brut=t;net=t/(1+o/100);tax=brut-net;}$('kdvNet').textContent=net.toFixed(2)+' TL';$('kdvTax').textContent=tax.toFixed(2)+' TL';$('kdvBrut').textContent=brut.toFixed(2)+' TL';}
-// Kronometre
-let kT=0,kInt=null;function fmtK(ms){const d=Math.floor(ms/100);return String(Math.floor(ms/60000)).padStart(2,'0')+':'+String(Math.floor(ms/1000)%60).padStart(2,'0')+'.'+(d%10);}
-function kStart(){if(kInt)return;const s=Date.now()-kT;kInt=setInterval(()=>{kT=Date.now()-s;$('kronoTxt').textContent=fmtK(kT);},100);}
-function kStop(){clearInterval(kInt);kInt=null;}function kReset(){kStop();kT=0;$('kronoTxt').textContent='00:00.0';}
-// Modal + cerez
-function openModal(id){$(id).classList.add('open');}
-function closeModal(id){$(id).classList.remove('open');}
-document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('open');}));
-function acceptCookies(){localStorage.setItem('fz_cookie','1');$('cookieBar').classList.remove('show');}
-window.addEventListener('load',()=>{if(!localStorage.getItem('fz_cookie'))setTimeout(()=>$('cookieBar').classList.add('show'),1200);analyze();genPass();fillSys();makeQR();calcKredi();calcVKI();calcKDV();const r=hexRgb($('colPick').value);$('colRgb').textContent='rgb('+r.join(', ')+')';randPal();});
-function subscribe(){const v=$('nlMail').value;if(!v||!v.includes('@')){$('nlMsg').textContent='Gecerli e-posta girin.';return;}$('nlMsg').textContent='Kayit alindi, tesekkurler!';$('nlMail').value='';}
-window.addEventListener('scroll',()=>{const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;$('pBar').style.width=p+'%';$('toTop').style.display=h.scrollTop>600?'block':'none';});
-</script>
-</body>
-</html>
-
-
-
-
-
-
+body{background:#0a0e17;color:#e5e9f0;font-family:Arial,sans-serif;line-height:1.7}
+a{color:#3b82f6}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+header{background:#0b1226;border-bottom:1px solid #1e2a4a;position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px;gap:10px}
+.logo{font-weight:800;font-size:1.25rem;color:#fff}
+.logo b{color:#3b82f6}
+.links{display:flex;gap:16px;font-size:.92rem;font-weight:700}
+.links a{color:#94a3b8;text-decoration:none}
+.badge{background:rgba(34,197,94,.12);border:1px solid #22c55e;color:#4ade80;font-size:.78rem;font-weight:700;padding:6px 12px;border-radius:999px}
+.adlabel{font-size:.7rem;color:#64748b;text-align:center;margin:14px 0 6px}
+.adbox{background:#101736;border:1px dashed #2b3b66;border-radius:10px;color:#94a3b8;text-align:center;padding:16px;font-size:.85rem;max-width:728px;margin:0 auto}
+.hero{background:#0f1524;border:1px solid #1e2a4a;border-radius:14px;padding:26px;margin:16px 0}
+.hero h1{font-size:1.9rem;margin:10px 0}
+.hero h1 span{color:#22d3ee}
+.hero p{color:#94a3b8}
+.btn{display:inline-block;background:#2563eb;color:#fff;border:none;border-radius:8px;padding:10px 16px;font-weight:700;cursor:pointer;font-size:.9rem;text-decoration:none}
+.btn2{background:#1a2542;color:#fff;border:1px solid #2b3b66;border-radius:8px;padding:9px 14px;cursor:pointer;font-size:.85rem}
+.main{display:grid;grid-template-columns:1fr 300px;gap:18px;margin:16px 0 30px}
+.card{background:#131b30;border:1px solid #1e2a4a;border-radius:12px;padding:18px;margin-bottom:14px}
+textarea,input[type=text],input[type=number],input[type=date],select{width:100%;background:#0a0e17;border:1px solid #1e2a4a;border-radius:8px;color:#fff;padding:10px;margin:4px 0}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tabs button{background:#0a0e17;border:1px solid #1e2a4a;color:#94a3b8;border-radius:999px;padding:7px 13px;font-size:.8rem;font-weight:700;cursor:pointer}
+.tabs button.on{background:#2563eb;color:#fff}
+.pane{display:none}
+.pane.on{display:block}
+.box4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.box3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.box2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.k{background:#0a0e17;border:1px solid #1e2a4a;border-radius:8px;padding:8px;text-align:center}
+.k b{display:block;font-size:1.05rem;color:#22d3ee;word-break:break-word}
+.k span{font-size:.72rem;color:#94a3b8}
+.side{background:#131b30;border:1px solid #1e2a4a;border-radius:12px;padding:16px;margin-bottom:14px}
+footer{background:#070b14;border-top:1px solid #1e2a4a;padding:24px 0;font-size:.85rem;color:#94a3b8}
+.modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:100;padding:16px;overflow:auto}
+.modal.on{display:block}
+.mbox{background:#0f172a;border:1px solid #1e2a4a;border-radius:12px;max-width:640px;margin:40px auto;padding:22px;max-height:80vh;overflow:auto}
+.cbar{position:fixed;left:12px;right:12px;bottom:12px;background:#0f172a;border:1px solid #2563eb;border-radius:12px;padding:14px;display:none;z-index:90}
+.cbar.on{display:block}
+.crumbs{font-size:.78rem;color:#64748b;margin:12px 0}
+.crumbs a{color:#64748b;text-decoration:none}
+.toc{background:#0a0e17;border:1px solid #1e2a4a;border-radius:8px;padding:12px 16px;margin:10px 0;font-size:.86rem}
+.toc b{color:#fff}
+.faq{border:1px solid #1e2a4a;border-radius:8px;margin:8px 0;overflow:hidden}
+.faq summary{cursor:pointer;padding:11px 14px;font-weight:700;background:#0a0e17;color:#fff;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";float:right;color:#22d3ee;font-size:1.2rem;line-height:1}
+.faq[open] summary::after{content:"-"}
+.faq div{padding:10px 14px;font-size:.9rem;color:#cbd5e1}
+.sechead{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.sechead h2{font-size:1.25rem;color:#fff}
+.sechead::after{content:"";flex:1;height:1px;background:#1e2a4a}
+.toplist{list-style:none;padding:0}
+.toplist li{padding:7px 0;border-bottom:1px solid #1a2542;font-size:.86rem}
+.toplist li:last-child{border:none}
+.toplist a{text-decoration:none}
+.guide h3{color:#fff;margin:14px 0 6px;font-size:1.02rem}
+.guide p,.guide li{font-size:.9rem;color:#cbd5e1}
+.guide ul,.guide ol{padding-left:20px;margin:6px 0}
+.guide table{width:100%;border-collapse:collapse;font-size:.84rem;margin:8px 0}
+.guide th,.guide td{border:1px solid #1e2a4a;padding:7px;text-align:left}
+.guide th{background:#0a0e17;color:#fff}
+.topbtn{position:fixed;right:14px;bottom:70px;background:#2563eb;color:#fff;border:none;border-radius:50%;width:42px;height:42px;font-size:1.15rem;cursor:pointer;display:none;z-index:80}
+.pbar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#2563eb,#22d3ee);width:0;z-index:99}
+@media(max-width:900px){.main{grid-template-columns:1fr}.links{display:none}.box4{grid-template-columns:1fr 1fr}.hero h1{font-size:1.45rem}}
 </style>
 </head>
+<body>
+<div class="pbar" id="pbar"></div>
+<button class="topbtn" id="topbtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Yukarı çık">↑</button>
+<header><div class="wrap nav">
+<div class="logo">Fazecup <b>Tech</b></div>
+<nav class="links"><a href="#kelime-sayaci">Kelime Sayacı</a><a href="#sifre-olusturucu">Şifre</a><a href="#kredi-hesaplama">Kredi</a><a href="#kdv-hesaplama">KDV</a><a href="#vki-hesaplama">VKİ</a><a href="#qr-kod">QR Kod</a><a href="#rehberler">Rehberler</a></nav>
+<div class="badge">AdSense Hazır</div>
+</div></header>
+
+<div class="wrap">
+<nav class="crumbs" aria-label="breadcrumb"><a href="#">Ana Sayfa</a> / <span>Ücretsiz Online Araçlar</span></nav>
+<div class="adlabel">Reklam</div>
+<div class="adbox">
+<!-- OTOMATİK REKLAM: Google, head'deki AdSense koduyla buraya otomatik reklam yerleştirir. -->
+<!-- Özel reklam birimi istersen AdSense panelinden slot ID alıp aşağıdaki şablonu kullan: -->
+<!--
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-1869402564433410"
+data-ad-slot="BURAYA_SLOT_ID"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<div class="hero">
+<h1>Kelime Sayacı, Kredi Hesaplama, KDV, VKİ ve <span>QR Kod Oluşturucu</span></h1>
+<p>Ödev, dilekçe, blog yazısı ve banka başvurusu öncesi ihtiyacın olan her şey burada: <b>kelime sayacı</b>, <b>güçlü şifre oluşturucu</b>, <b>kredi faiz hesaplama</b>, <b>KDV hesaplama</b>, <b>VKİ hesaplama</b>, <b>QR kod oluşturma</b>, renk seçici ve Base64 çevirici. Tamamı ücretsiz, kayıtsız, saniyeler içinde sonuç.</p>
+<div class="toc"><b>Bu sayfada:</b> <a href="#kelime-sayaci">Kelime Sayacı</a> · <a href="#sifre-olusturucu">Şifre Oluşturucu</a> · <a href="#kredi-hesaplama">Kredi Hesaplama</a> · <a href="#kdv-hesaplama">KDV Hesaplama</a> · <a href="#vki-hesaplama">VKİ Hesaplama</a> · <a href="#qr-kod">QR Kod</a> · <a href="#rehberler">Rehberler</a> · <a href="#sss">SSS</a></div>
+</div>
+<div class="main"><div>
+<section class="card guide" id="kelime-sayaci" itemscope itemtype="https://schema.org/HowTo">
+<div class="sechead"><h2 itemprop="name">Kelime Sayacı ve Karakter Sayacı</h2></div>
+<p>Dilekçe, ödev, makale veya sosyal medya metni yazarken <b>kelime sayısı</b>, <b>karakter sayısı</b> (boşluklu/boşluksuz), <b>satır sayısı</b> ve <b>tahmini okuma süresi</b>ni anında görün. Metni kutuya yapıştırmanız yeterli — her tuşta otomatik hesaplanır.</p>
+<div class="toc"><b>İçindekiler:</b> 1. Araç 2. Nasıl kullanılır? 3. Okuma süresi tablosu 4. SSS</div>
+<textarea id="tMetin" rows="5">Fazecup Tech: kelime sayacı, şifre oluşturucu, kredi hesaplama ve daha fazlası. Metninizi buraya yazın veya yapıştırın.</textarea>
+<div class="box4">
+<div class="k"><b id="kKelime">0</b><span>Kelime</span></div>
+<div class="k"><b id="kKarakter">0</b><span>Karakter</span></div>
+<div class="k"><b id="kBosluksuz">0</b><span>Boşluksuz</span></div>
+<div class="k"><b id="kSatir">0</b><span>Satır</span></div>
+</div>
+<div class="box4">
+<div class="k"><b id="kCumle">0</b><span>Cümle</span></div>
+<div class="k"><b id="kParagraf">0</b><span>Paragraf</span></div>
+<div class="k"><b id="kSure">0 sn</b><span>Okuma Süresi</span></div>
+<div class="k"><b id="kKonusma">0 sn</b><span>Konuşma Süresi</span></div>
+</div>
+<p style="margin-top:8px"><button class="btn2" onclick="tTemizle()">Temizle</button> <button class="btn2" onclick="tKopya()">Kopyala</button> <button class="btn2" onclick="tBuyuk()">BÜYÜK HARF</button> <button class="btn2" onclick="tKucuk()">küçük harf</button> <button class="btn2" onclick="tBaslik()">Başlık Formatı</button></p>
+<h3>Kelime Sayacı Nasıl Kullanılır?</h3>
+<ol>
+<li>Metninizi yukarıdaki kutuya <b>yapıştırın veya yazın</b>.</li>
+<li>Kelime, karakter ve okuma süresi <b>otomatik</b> hesaplanır.</li>
+<li>Ödeviniz 1000 kelimeyi geçtiyse <b>Temizle</b> ile sıfırlayın.</li>
+</ol>
+<h3>Tahmini Okuma Süresi Tablosu</h3>
+<table>
+<tr><th>Kelime</th><th>Okuma (200 kd/dk)</th><th>Konuşma (130 kd/dk)</th></tr>
+<tr><td>250 kelime</td><td>1 dk 15 sn</td><td>~2 dk</td></tr>
+<tr><td>500 kelime</td><td>2 dk 30 sn</td><td>~4 dk</td></tr>
+<tr><td>1000 kelime</td><td>5 dk</td><td>~8 dk</td></tr>
+<tr><td>2000 kelime</td><td>10 dk</td><td>~15 dk</td></tr>
+</table>
+<details class="faq"><summary>Kelime sayacı boşlukları sayar mı?</summary><div>İki ayrı sayaç vardır: <b>Karakter</b> boşluklu, <b>Boşluksuz</b> ise boşluksuz sayar. Akademik başvurularda genelde boşluksuz istenir.</div></details>
+<details class="faq"><summary>Verilerim sunucuya gidiyor mu?</summary><div>Hayır. Tüm hesaplama tarayıcınızda yapılır, metniniz cihazınızdan çıkmaz.</div></details>
+</section>
+<section class="card guide" id="sifre-olusturucu">
+<div class="sechead"><h2>Güçlü Şifre Oluşturucu</h2></div>
+<p>Mail, banka ve sosyal medya hesaplarınız için <b>tahmin edilemez şifreler</b> üretin. 6-64 karakter arası uzunluk, büyük-küçük harf, rakam ve sembol seçenekleri. Şifreler cihazınızda üretilir, <b>asla sunucuya gönderilmez</b>.</p>
+<div class="toc"><b>İçindekiler:</b> 1. Araç 2. Güvenli şifre kuralları 3. SSS</div>
+<p style="font-size:.85rem">Uzunluk: <b id="sLenVal">16</b> karakter</p>
+<input type="range" id="sLen" min="6" max="64" value="16" style="width:100%">
+<p style="font-size:.85rem"><input type="checkbox" id="sBuyuk" checked> Büyük Harf (A-Z) <input type="checkbox" id="sKucuk" checked> Küçük Harf (a-z) <input type="checkbox" id="sSayi" checked> Rakam (0-9) <input type="checkbox" id="sSembol" checked> Sembol (!@#$)</p>
+<p id="sCikti" style="background:#020617;border:1px solid #2563eb;border-radius:8px;padding:10px;font-family:monospace;word-break:break-all">Oluştur'a basın</p>
+<div style="height:8px;background:#1e293b;border-radius:99px;overflow:hidden;margin:6px 0"><div id="sBar" style="height:100%;width:10%;background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e)"></div></div>
+<p style="font-size:.8rem;color:#94a3b8" id="sGuc">Şifre gücü: -</p>
+<p><button class="btn" onclick="sifreUret()">Oluştur</button> <button class="btn2" onclick="sifreKopya()">Kopyala</button> <button class="btn2" onclick="sifreUret()">Tekrar Üret</button></p>
+<h3>Güvenli Şifre Nasıl Olmalı?</h3>
+<ul>
+<li><b>En az 12-16 karakter</b> olsun. Her ekstra karakter kırılma süresini katlar.</li>
+<li>Adınız, doğum tarihiniz ve <b>"123456", "qwerty", "password"</b> gibi kalıpları asla kullanmayın.</li>
+<li>Her hesapta <b>farklı şifre</b> kullanın, bir şifre yöneticisinde saklayın.</li>
+<li>Mümkünse <b>iki faktörlü doğrulama (2FA)</b> açın.</li>
+</ul>
+<details class="faq"><summary>Oluşturulan şifreler güvenli mi?</summary><div>Evet. Şifreler <b>Math.random + zaman damgası</b> ile cihazınızda üretilir, hiçbir sunucuya gönderilmez ve kaydedilmez.</div></details>
+</section>
+<section class="card guide" id="sistem-araci">
+<div class="sechead"><h2>Sistem Bilgisi Öğrenme</h2></div>
+<p>Bilgisayarınızın <b>işletim sistemi</b>, <b>tarayıcı</b>, <b>ekran çözünürlüğü</b> ve <b>dil</b> bilgisini tek tıkla görün. Teknik destek alırken bu bilgiler çok işe yarar.</p>
+<div class="box2">
+<div class="k"><b id="bOS">-</b><span>İşletim Sistemi</span></div>
+<div class="k"><b id="bTarayici">-</b><span>Tarayıcı</span></div>
+<div class="k"><b id="bEkran">-</b><span>Ekran Çözünürlüğü</span></div>
+<div class="k"><b id="bDil">-</b><span>Dil</span></div>
+</div>
+<p style="margin-top:8px"><button class="btn2" onclick="sistemDoldur()">Yenile</button></p>
+</section>
+<section class="card guide" id="qr-kod">
+<div class="sechead"><h2>QR Kod Oluşturucu</h2></div>
+<p>Link, Wi-Fi şifresi, IBAN veya herhangi bir metinden <b>taranabilir QR kod</b> üretin. Restoran menüsü, davetiye, kartvizit ve ödeme bilgileri için idealdir. Telefon kameranızla okutmanız yeterli.</p>
+<div class="toc"><b>İçindekiler:</b> 1. Araç 2. Nerelerde kullanılır? 3. SSS</div>
+<input type="text" id="qMetin" value="https://fazecup.tech" placeholder="https://ornek.com veya yazı yazın">
+<p><button class="btn" onclick="qrUret()">QR Üret</button> <button class="btn2" onclick="qrIndir()">PNG İndir</button></p>
+<p style="background:#fff;border-radius:8px;padding:12px;display:inline-block;min-width:224px;min-height:224px;text-align:center"><img id="qImg" width="200" height="200" alt="Oluşturulan QR kod"></p>
+<h3>QR Kod Nerelerde Kullanılır?</h3>
+<ul>
+<li><b>Restoran &amp; kafe:</b> masaya menü QR'ı koyun, baskı maliyetinden kurtulun.</li>
+<li><b>Davetiye &amp; kartvizit:</b> konum veya iletişim bilgisini tek okutmayla paylaşın.</li>
+<li><b>Ödeme:</b> IBAN veya açıklama metnini QR'a gömün, hatasız tahsilat yapın.</li>
+</ul>
+<details class="faq"><summary>QR kod ücretsiz mi?</summary><div>Evet, sınırsız ve ücretsiz üretebilirsiniz. Kodlar harici bir servisle anında oluşturulur.</div></details>
+</section>
+<section class="card guide" id="renk-araci">
+<div class="sechead"><h2>Renk Seçici ve Palet Oluşturucu</h2></div>
+<p>Web tasarım, logo ve sosyal medya çalışmaları için <b>HEX renk kodu</b> seçin, tek tıkla kopyalayın veya <b>rastgele uyumlu palet</b> üretin.</p>
+<p><input type="color" id="rSec" value="#2563eb" style="width:80px;height:44px"> <b id="rHex">#2563EB</b> <span id="rRgb" style="font-size:.82rem;color:#94a3b8"></span></p>
+<p><button class="btn2" onclick="renkKopya()">Kopyala</button> <button class="btn2" onclick="paletUret()">Rastgele Palet</button></p>
+<div id="rPalet" style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:8px"></div>
+</section>
+<section class="card guide" id="base64-araci">
+<div class="sechead"><h2>Base64 Çevirici (Encode / Decode)</h2></div>
+<p>Yazılımcılar ve öğrenciler için <b>metni Base64'e çevirme</b> ve Base64'ü geri çözme aracı. Türkçe karakter desteklidir.</p>
+<textarea id="eGiris" rows="3">Merhaba Fazecup!</textarea>
+<p><button class="btn2" onclick="bEncode()">Encode Et</button> <button class="btn2" onclick="bDecode()">Decode Et</button> <button class="btn2" onclick="bKopya()">Sonucu Kopyala</button></p>
+<textarea id="eCikis" rows="3" placeholder="Sonuç burada görünecek"></textarea>
+</section>
+<section class="card guide" id="kredi-hesaplama">
+<div class="sechead"><h2>Kredi Hesaplama ve Faiz Hesaplama (2026)</h2></div>
+<p>Bankaya gitmeden önce <b>aylık taksit</b>, <b>toplam ödeme</b> ve <b>toplam faiz</b> tutarını öğrenin. Tutar, aylık faiz oranı ve vadeyi girin; sonuç anında hesaplansın. <b>Dosya masrafı ve sigortayı</b> toplam maliyete eklemeyi unutmayın.</p>
+<div class="toc"><b>İçindekiler:</b> 1. Hesaplayıcı 2. Formül ve örnek 3. Kredi türleri tablosu 4. SSS</div>
+<div class="box3">
+<div><label style="font-size:.82rem">Tutar (TL)</label><input type="number" id="fTutar" value="500000"></div>
+<div><label style="font-size:.82rem">Aylık Faiz %</label><input type="number" id="fFaiz" value="3.5" step="0.01" min="0"></div>
+<div><label style="font-size:.82rem">Vade (ay)</label><input type="number" id="fVade" value="36" min="1" max="120"></div>
+</div>
+<p><button class="btn" onclick="krediHesap()">Kredi Hesapla</button></p>
+<div class="box3">
+<div class="k"><b id="fTaksit">-</b><span>Aylık Taksit</span></div>
+<div class="k"><b id="fToplam">-</b><span>Toplam Ödeme</span></div>
+<div class="k"><b id="fFaizT">-</b><span>Toplam Faiz</span></div>
+</div>
+<div class="box2">
+<div class="k"><b id="fOran">-</b><span>Yıllık Maliyet*</span></div>
+<div class="k"><b id="fTavsiye">-</b><span>Değerlendirme</span></div>
+</div>
+<h3>Kredi Faizi Nasıl Hesaplanır?</h3>
+<p>Aylık taksit formülü: <b>Taksit = P × r ÷ (1 − (1+r)<sup>−n</sup>)</b> — P ana para, r aylık faiz, n vade.</p>
+<p><b>Örnek:</b> 500.000 TL, %3,5 faiz, 36 ay → aylık yaklaşık <b>24.600 TL</b>, toplam ~<b>886.000 TL</b>. Vade uzadıkça taksit düşer ama toplam faiz artar.</p>
+<h3>Kredi Türleri Tablosu</h3>
+<table>
+<tr><th>Tür</th><th>Tipik Vade</th><th>Ne İçin?</th></tr>
+<tr><td>İhtiyaç kredisi</td><td>3-36 ay</td><td>Nakit ihtiyaç</td></tr>
+<tr><td>Taşıt kredisi</td><td>12-48 ay</td><td>Araç alımı</td></tr>
+<tr><td>Konut kredisi</td><td>60-120 ay</td><td>Ev alımı</td></tr>
+</table>
+<details class="faq"><summary>Erken kapatırsam ne olur?</summary><div>Kalan anapara üzerinden işlem yapılır, küçük bir erken kapatma ücreti çıkabilir.</div></details>
+</section>
+<section class="card guide" id="kdv-hesaplama">
+<div class="sechead"><h2>KDV Hesaplama: KDV Ekle ve KDV Çıkar</h2></div>
+<p>Fatura kesenler için: tutara <b>KDV ekleyin</b> veya brüt fiyattan <b>KDV çıkarın</b>. Genel oran <b>%20</b>, bazı ürünlerde <b>%10</b> ve <b>%1</b> uygulanır.</p>
+<div class="box3">
+<div><label style="font-size:.82rem">Tutar (TL)</label><input type="number" id="vTutar" value="1000" min="0" step="0.01"></div>
+<div><label style="font-size:.82rem">KDV Oranı</label><select id="vOran"><option value="1">%1</option><option value="10">%10</option><option value="20" selected>%20</option></select></div>
+<div><label style="font-size:.82rem">İşlem</label><select id="vIslem"><option value="ekle">KDV Ekle (net → brüt)</option><option value="cikar">KDV Çıkar (brüt → net)</option></select></div>
+</div>
+<p><button class="btn" onclick="kdvHesap()">KDV Hesapla</button></p>
+<div class="box3">
+<div class="k"><b id="vNet">-</b><span>Net Tutar</span></div>
+<div class="k"><b id="vKdv">-</b><span>KDV Tutarı</span></div>
+<div class="k"><b id="vBrut">-</b><span>Brüt Tutar</span></div>
+</div>
+<h3>KDV Nasıl Hesaplanır? (Örnekli)</h3>
+<p><b>KDV ekleme:</b> Brüt = Net × (1 + oran). Örnek: 1.000 TL + %20 → KDV 200 TL, brüt <b>1.200 TL</b>.</p>
+<p><b>KDV çıkarma:</b> Net = Brüt ÷ (1 + oran). Örnek: 1.200 TL brüt, %20 → net <b>1.000 TL</b>, KDV 200 TL.</p>
+<details class="faq"><summary>Hangi üründe hangi KDV var?</summary><div>Genel oran %20'dir. Temel gıda, tekstil ve konaklama gibi gruplarda %10; ekmek, süt gibi temel ürünlerde %1 uygulanabilir. Güncel liste için GİB duyurularını kontrol edin.</div></details>
+</section>
+<section class="card guide" id="vki-hesaplama">
+<div class="sechead"><h2>VKİ Hesaplama (Vücut Kitle İndeksi)</h2></div>
+<p>Boy ve kilonuzu girin, <b>vücut kitle indeksinizi</b>, durumunuzu (zayıf/normal/kilolu/obez) ve <b>ideal kilo aralığınızı</b> öğrenin. Formül: <b>VKİ = kilo ÷ boy²</b> (boy metre cinsinden).</p>
+<div class="box2">
+<div><label style="font-size:.82rem">Boy (cm)</label><input type="number" id="wBoy" value="175" min="50" max="250"></div>
+<div><label style="font-size:.82rem">Kilo (kg)</label><input type="number" id="wKilo" value="75" min="20" max="300"></div>
+</div>
+<p><button class="btn" onclick="vkiHesap()">VKİ Hesapla</button></p>
+<div class="box3">
+<div class="k"><b id="wSonuc">-</b><span>VKİ Değeri</span></div>
+<div class="k"><b id="wDurum">-</b><span>Durum</span></div>
+<div class="k"><b id="wIdeal">-</b><span>İdeal Kilo</span></div>
+</div>
+<h3>VKİ Değerleri Tablosu (DSÖ)</h3>
+<table>
+<tr><th>VKİ</th><th>Durum</th></tr>
+<tr><td>18,5 altı</td><td>Zayıf</td></tr>
+<tr><td>18,5 – 24,9</td><td>Normal</td></tr>
+<tr><td>25 – 29,9</td><td>Kilolu</td></tr>
+<tr><td>30 ve üzeri</td><td>Obez</td></tr>
+</table>
+<p style="font-size:.8rem;color:#64748b">Not: VKİ genel bir göstergedir; kas kütlesi yüksek kişilerde yanıltıcı olabilir. Kesin değerlendirme için doktora danışın.</p>
+</section>
+<section class="card guide" id="yuzde-hesaplama">
+<div class="sechead"><h2>Yüzde Hesaplama</h2></div>
+<p>İndirim, zam ve yüzde problemleri için: <b>A sayısının %B'si kaçtır?</b> Örneğin 2000'in %25'i = 500.</p>
+<div class="box3">
+<div><label style="font-size:.82rem">Sayı (A)</label><input type="number" id="ySayi" value="2000"></div>
+<div><label style="font-size:.82rem">Yüzde (%B)</label><input type="number" id="yOran" value="25"></div>
+<div><label style="font-size:.82rem">İşlem</label><select id="yIslem"><option value="yuzde">A'nın %B'si</option><option value="indirim">İndirimli fiyat</option><option value="zam">Zamlı fiyat</option></select></div>
+</div>
+<p><button class="btn" onclick="yuzdeHesap()">Hesapla</button></p>
+<div class="box2">
+<div class="k"><b id="ySonuc">-</b><span>Sonuç</span></div>
+<div class="k"><b id="yAciklama">-</b><span>Açıklama</span></div>
+</div>
+<h3>Yüzde Hesaplama Örnekleri</h3>
+<table>
+<tr><th>Soru</th><th>Çözüm</th></tr>
+<tr><td>2000'in %25'i kaçtır?</td><td>2000 × 0,25 = <b>500</b></td></tr>
+<tr><td>1000 TL'ye %20 zam?</td><td>1000 × 1,20 = <b>1200 TL</b></td></tr>
+<tr><td>500 TL'ye %10 indirim?</td><td>500 × 0,90 = <b>450 TL</b></td></tr>
+</table>
+</section>
+<section class="card guide" id="yas-hesaplama">
+<div class="sechead"><h2>Yaş Hesaplama</h2></div>
+<p>Doğum tarihinizi girin; <b>yaşınız</b>, <b>toplam gün</b> ve <b>burcunuz</b> hesaplansın.</p>
+<div class="box2">
+<div><label style="font-size:.82rem">Doğum Tarihi</label><input type="date" id="gTarih" value="2000-01-01"></div>
+<div style="display:flex;align-items:flex-end"><button class="btn" onclick="yasHesap()">Yaş Hesapla</button></div>
+</div>
+<div class="box3">
+<div class="k"><b id="gYas">-</b><span>Yaş</span></div>
+<div class="k"><b id="gGun">-</b><span>Toplam Gün</span></div>
+<div class="k"><b id="gBurc">-</b><span>Burç</span></div>
+</div>
+<h3>Burç Tarihleri Tablosu</h3>
+<table>
+<tr><th>Burç</th><th>Tarih Aralığı</th></tr>
+<tr><td>Koç</td><td>21 Mart – 19 Nisan</td></tr>
+<tr><td>Boğa</td><td>20 Nisan – 20 Mayıs</td></tr>
+<tr><td>İkizler</td><td>21 Mayıs – 20 Haziran</td></tr>
+<tr><td>Yengeç</td><td>21 Haziran – 22 Temmuz</td></tr>
+<tr><td>Aslan</td><td>23 Temmuz – 22 Ağustos</td></tr>
+<tr><td>Başak</td><td>23 Ağustos – 22 Eylül</td></tr>
+<tr><td>Terazi</td><td>23 Eylül – 22 Ekim</td></tr>
+<tr><td>Akrep</td><td>23 Ekim – 21 Kasım</td></tr>
+<tr><td>Yay</td><td>22 Kasım – 21 Aralık</td></tr>
+<tr><td>Oğlak</td><td>22 Aralık – 19 Ocak</td></tr>
+<tr><td>Kova</td><td>20 Ocak – 18 Şubat</td></tr>
+<tr><td>Balık</td><td>19 Şubat – 20 Mart</td></tr>
+</table>
+</section>
+<section class="card guide" id="kronometre">
+<div class="sechead"><h2>Kronometre ve Geri Sayım Sayacı</h2></div>
+<p>Ders çalışma (Pomodoro), spor ve yemek için <b>kronometre</b> ve <b>geri sayım</b>. Süre bitince sesli uyarı verir.</p>
+<div style="font-size:2.2rem;font-weight:800;text-align:center" id="kSure2">00:00.0</div>
+<p style="text-align:center"><button class="btn2" onclick="kBasla()">Başlat</button> <button class="btn2" onclick="kDur()">Durdur</button> <button class="btn2" onclick="kSifirla()">Sıfırla</button></p>
+<hr style="border-color:#1e2a4a;margin:10px 0">
+<div class="box2">
+<div><label style="font-size:.82rem">Geri sayım (dakika)</label><input type="number" id="gDakika" value="25" min="1" max="180"></div>
+<div style="display:flex;align-items:flex-end"><button class="btn" onclick="gBasla()">Geri Sayımı Başlat</button></div>
+</div>
+<div style="font-size:1.8rem;font-weight:800;text-align:center" id="gSayac">25:00</div>
+<h3>Pomodoro Tekniği Nasıl Uygulanır?</h3>
+<ol>
+<li><b>25 dakika</b> odaklan, 5 dakika mola ver.</li>
+<li>4 turdan sonra <b>20-30 dakika</b> uzun mola ver.</li>
+<li>Telefonu sessize al, tek işe odaklan.</li>
+</ol>
+</section>
+<section class="card guide" id="rehberler">
+<div class="sechead"><h2>Teknoloji Rehberleri ve Makaleler</h2></div>
+<div class="toc"><b>Rehberler:</b> <a href="#donanim">RAM ve Yarı İletken</a> · <a href="#isletim-sistemi">Kernel Yapıları</a> · <a href="#para-kazanma">Para Kazanma</a></div>
+<article id="donanim">
+<h3>Geleceğin Yarı İletken Teknolojileri ve RAM Mimarisi</h3>
+<p style="font-size:.8rem;color:#64748b">Donanım · 12 dk okuma · 2026</p>
+<p>Yarı iletken endüstrisi 3nm ve 2nm üretimle güç verimliliğinde yeni döneme girdi. <b>Chiplet</b> tasarımlar ve <b>GAA transistörler</b> sayesinde daha fazla çekirdek, daha düşük enerji tüketimi mümkün oldu.</p>
+<h3>DDR5 ve LPDDR5X: Hangisini Seçmeli?</h3>
+<ul>
+<li><b>DDR5-5600+:</b> Çift 32-bit alt kanal, on-die ECC, 1.1V. Masaüstü ve oyuncu kasaları için standart.</li>
+<li><b>LPDDR5X:</b> İnce dizüstülerde lehimli, ultra verimli bellek.</li>
+<li><b>Tavsiye:</b> Oyun için CL30 DDR5 32 GB; kurgu ve yazılım için 64 GB ve üzeri.</li>
+</ul>
+<h3>HBM: Yapay Zekânın Bellek Motoru</h3>
+<p><b>HBM3e</b> 1.2 TB/s üzeri bant genişliği sunar. 2026 sonrası <b>HBM4</b> ile 2048-bit arayüzler yaygınlaşacak.</p>
+</article>
+<div class="adlabel">Reklam</div>
+<div class="adbox">
+<!-- In-Article: AdSense otomatik reklamları buraya yerleşir (head'deki kod yeterli). -->
+</div>
+<article id="isletim-sistemi">
+<h3>İşletim Sistemi Mimarileri ve Kernel Yapıları</h3>
+<p style="font-size:.8rem;color:#64748b">Yazılım · 10 dk okuma</p>
+<p><b>Kernel</b>, donanım ile yazılım arasındaki köprüdür: süreç, bellek, dosya sistemi ve sürücüler çekirdeğin görevidir.</p>
+<ul>
+<li><b>Monolitik (Linux):</b> Hızlı sistem çağrıları, modüler yapı.</li>
+<li><b>Mikro (seL4, Zircon):</b> Yüksek izolasyon, güvenlikte ideal.</li>
+<li><b>Hibrit (Windows NT, XNU):</b> Performans + modülerite dengesi.</li>
+</ul>
+</article>
+<hr style="border-color:#1e2a4a;margin:12px 0">
+<article id="para-kazanma">
+<h3>2026'da İnternetten Para Kazanmanın 7 Gerçek Yolu</h3>
+<p style="font-size:.8rem;color:#64748b">Finans · 8 dk okuma</p>
+<ol>
+<li><b>Niş blog + AdSense:</b> Kredi, sigorta, hosting konuları.</li>
+<li><b>Affiliate:</b> %20-50 komisyonlu ürünler.</li>
+<li><b>Freelance:</b> Metin yazarlığı ve web tasarım.</li>
+<li><b>Dijital ürün:</b> E-kitap ve şablon satışı.</li>
+<li><b>YouTube:</b> Finans/teknoloji yüksek RPM verir.</li>
+<li><b>Bülten:</b> E-posta listesi + sponsorlu gönderi.</li>
+<li><b>Araç siteleri:</b> Hesaplayıcılarla organik trafik.</li>
+</ol>
+</article>
+</section>
+<section class="card" id="sss">
+<div class="sechead"><h2>Sık Sorulan Sorular (SSS)</h2></div>
+<details class="faq"><summary>Bu araçlar ücretsiz mi?</summary><div>Evet. Tüm araçlar ücretsizdir, kayıt gerekmez.</div></details>
+<details class="faq"><summary>Şifrelerim sunucuya gidiyor mu?</summary><div>Hayır. Tüm işlemler tarayıcınızda yapılır.</div></details>
+<details class="faq"><summary>Hesaplamalar doğru mu?</summary><div>Formüller standarttır; banka masrafları değişebilir, ödeme planını isteyin.</div></details>
+<details class="faq"><summary>Site neden reklam gösteriyor?</summary><div>Siteyi ücretsiz tutmak için AdSense reklamları kullanıyoruz.</div></details>
+</section>
+</div>
+<div><div class="side"><div style="font-size:.7rem;color:#64748b;text-align:center">REKLAM</div><div class="adbox" style="max-width:100%"><!-- Sidebar: AdSense otomatik reklamları buraya yerleşir (head'deki kod yeterli). --></div></div>
+<div class="side"><h4>Popüler Araçlar</h4><ul class="toplist"><li><a href="#kelime-sayaci">Kelime Sayacı</a></li><li><a href="#sifre-olusturucu">Şifre Oluşturucu</a></li><li><a href="#kredi-hesaplama">Kredi Hesaplama</a></li><li><a href="#kdv-hesaplama">KDV Hesaplama</a></li><li><a href="#vki-hesaplama">VKİ Hesaplama</a></li><li><a href="#yuzde-hesaplama">Yüzde Hesaplama</a></li><li><a href="#qr-kod">QR Kod Oluşturucu</a></li></ul></div>
+<div class="side"><h4>Rehberler</h4><ul class="toplist"><li><a href="#donanim">RAM ve Yarı İletken</a></li><li><a href="#isletim-sistemi">Kernel Yapıları</a></li><li><a href="#para-kazanma">Para Kazanma</a></li><li><a href="#sss">SSS</a></li></ul></div>
+<div class="side"><h4>Bülten</h4><p style="font-size:.84rem;color:#94a3b8">Haftalık teknoloji özeti.</p><input type="text" id="nMail" placeholder="E-posta adresiniz"><p><button class="btn" onclick="bulten()">Katıl</button></p><p id="nMsg" style="font-size:.8rem;color:#4ade80"></p></div>
+</div></div></div>
+<footer id="iletisim"><div class="wrap">
+<p><b style="color:#fff">Fazecup Tech</b> — Kelime sayacı, kredi/KDV/VKİ hesaplama, QR kod ve şifre üretici. Ücretsiz online araçlar.</p>
+<p><a href="#" onclick="ac('mGizlilik');return false">Gizlilik Politikası</a> | <a href="#" onclick="ac('mCerez');return false">Çerez Politikası</a> | <a href="#" onclick="ac('mHakkimizda');return false">Hakkımızda</a> | info@fazecup.tech</p>
+<p style="margin-top:8px">© 2026 Fazecup Tech. Tüm hakları saklıdır.</p>
+</div></footer>
+<div class="modal" id="mGizlilik"><div class="mbox"><h3>Gizlilik Politikasi</h3><p style="font-size:.9rem">Verileriniz tarayicinizdan cikmaz. Bulten e-postasi disinda veri toplamayiz. Google AdSense cerezleri kullanilabilir. Iletisim: privacy@fazecup.tech</p><p><button class="btn" onclick="kapat('mGizlilik')">Kapat</button></p></div></div>
+<div class="modal" id="mCerez"><div class="mbox"><h3>Cerez Politikasi</h3><p style="font-size:.9rem">Zorunlu cerezler site icin gereklidir. Reklam cerezleri icin onay alinir.</p><p><button class="btn" onclick="kabul()">Kabul Et</button> <button class="btn2" onclick="kapat('mCerez')">Kapat</button></p></div></div>
+<div class="modal" id="mHakkimizda"><div class="mbox"><h3>Hakkimizda</h3><p style="font-size:.9rem">Fazecup Tech bagimsiz teknoloji yayinidir.</p><p><button class="btn" onclick="kapat('mHakkimizda')">Kapat</button></p></div></div>
+<div class="cbar" id="cbar"><p style="font-size:.85rem"><b>Cerez kullaniyoruz.</b> Deneyim ve reklam geliri icin gereklidir.</p><p style="margin-top:8px"><button class="btn" onclick="kabul()">Kabul Et</button> <button class="btn2" onclick="ac('mCerez')">Detay</button></p></div>
+<script>
+function el(id){return document.getElementById(id)}
+function fmtSayi(n){try{return Math.round(n).toLocaleString('tr-TR')}catch(e){return Math.round(n)+''}}
+function analiz(){var t=el('tMetin').value;var kelimeler=t.trim().match(/\S+/g)||[];var k=kelimeler.length;el('kKelime').textContent=k.toLocaleString('tr-TR');el('kKarakter').textContent=t.length.toLocaleString('tr-TR');el('kBosluksuz').textContent=t.replace(/\s/g,'').length.toLocaleString('tr-TR');el('kSatir').textContent=t==='' ?0:t.split('\n').length;var cumle=(t.match(/[^.!?…]+[.!?…]+/g)||[]).length;el('kCumle').textContent=cumle;var par=t.trim()==='' ?0:t.trim().split(/\n\s*\n|\n/).filter(function(x){return x.trim()!==''}).length;el('kParagraf').textContent=par;var sn=Math.ceil(k/200*60);el('kSure').textContent=sn<60?sn+' sn':Math.floor(sn/60)+' dk '+(sn%60)+' sn';var kn=Math.ceil(k/130*60);el('kKonusma').textContent=kn<60?kn+' sn':Math.floor(kn/60)+' dk '+(kn%60)+' sn'}
+function tTemizle(){el('tMetin').value='';analiz();el('tMetin').focus()}
+function tKopya(){var t=el('tMetin');t.select();try{t.setSelectionRange(0,999999)}catch(e){}try{document.execCommand('copy')}catch(e){}if(navigator.clipboard)navigator.clipboard.writeText(t.value);alert('Metin kopyalandı')}
+function tBuyuk(){el('tMetin').value=el('tMetin').value.toLocaleUpperCase('tr');analiz()}
+function tKucuk(){el('tMetin').value=el('tMetin').value.toLocaleLowerCase('tr');analiz()}
+function tBaslik(){el('tMetin').value=el('tMetin').value.toLocaleLowerCase('tr').replace(/(^|\s|[.!?]\s+)([a-zçğıöşü])/g,function(m,p,c){return p+c.toLocaleUpperCase('tr')});analiz()}
+var analizZaman=null;
+el('tMetin').addEventListener('input',function(){if(analizZaman)clearTimeout(analizZaman);analizZaman=setTimeout(analiz,60)});
+</script>
+<script>
+function sifreUret(){var len=parseInt(el('sLen').value,10)||16;el('sLenVal').textContent=len;var h='';if(el('sBuyuk').checked)h+='ABCDEFGHJKLMNPQRSTUVWXYZ';if(el('sKucuk').checked)h+='abcdefghijkmnpqrstuvwxyz';if(el('sSayi').checked)h+='23456789';if(el('sSembol').checked)h+='!@#$%^&*-_+=?';if(!h){el('sCikti').textContent='En az bir tür seçin';return}var s='';var rnd=null;try{rnd=new Uint32Array(len);crypto.getRandomValues(rnd)}catch(e){}for(var i=0;i<len;i++){var idx=rnd?rnd[i]%h.length:Math.floor(Math.random()*h.length);s+=h.charAt(idx)}el('sCikti').textContent=s;var skor=Math.min(100,Math.round(len*3.4+(el('sSembol').checked?22:0)+(el('sSayi').checked?10:0)+(el('sBuyuk').checked&&el('sKucuk').checked?10:0)));el('sBar').style.width=skor+'%';el('sGuc').textContent='Şifre gücü: '+(skor<40?'Zayıf':skor<70?'Orta':'Güçlü')+' ('+skor+'/100)'}
+function sifreKopya(){var t=el('sCikti').textContent;if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){alert('Şifre kopyalandı')})}else{alert(t)}}
+el('sLen').addEventListener('input',function(){el('sLenVal').textContent=this.value;sifreUret()});
+['sBuyuk','sKucuk','sSayi','sSembol'].forEach(function(id){el(id).addEventListener('change',sifreUret)});
+function sistemDoldur(){var u=navigator.userAgent;var os='Bilinmiyor';if(u.indexOf('Windows')>-1)os='Windows';else if(u.indexOf('Android')>-1)os='Android';else if(u.indexOf('iPhone')>-1||u.indexOf('iPad')>-1)os='iOS';else if(u.indexOf('Mac')>-1)os='macOS';else if(u.indexOf('Linux')>-1)os='Linux';var b='Diger';if(u.indexOf('Edg')>-1)b='Edge';else if(u.indexOf('Chrome')>-1)b='Chrome';else if(u.indexOf('Firefox')>-1)b='Firefox';else if(u.indexOf('Safari')>-1)b='Safari';el('bOS').textContent=os;el('bTarayici').textContent=b;el('bEkran').textContent=screen.width+'x'+screen.height;el('bDil').textContent=navigator.language||'-'}
+function qrUret(){var t=(el('qMetin').value||'https://fazecup.tech').trim();el('qImg').src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data='+encodeURIComponent(t);el('qImg').alt='QR kod: '+t.slice(0,80)}
+function qrIndir(){var a=document.createElement('a');a.href=el('qImg').src;a.download='fazecup-qr.png';a.target='_blank';document.body.appendChild(a);a.click();setTimeout(function(){a.remove()},500)}
+function hexRgb(h){h=h.replace('#','');return [parseInt(h.substr(0,2),16),parseInt(h.substr(2,2),16),parseInt(h.substr(4,2),16)]}
+function renkGuncelle(){var v=el('rSec').value.toUpperCase();el('rHex').textContent=v;var r=hexRgb(v);el('rRgb').textContent='rgb('+r.join(', ')+')'}
+el('rSec').addEventListener('input',renkGuncelle);
+function renkKopya(){if(navigator.clipboard)navigator.clipboard.writeText(el('rHex').textContent);alert('Kopyalandi: '+el('rHex').textContent)}
+function paletUret(){var r=el('rPalet');r.innerHTML='';for(var i=0;i<5;i++){var c='#'+Math.floor(Math.random()*16777215).toString(16);while(c.length<7)c+='0';var d=document.createElement('div');d.style.cssText='background:'+c+';border-radius:6px;padding:18px 4px;font-size:.65rem;text-align:center;color:#fff';d.textContent=c;r.appendChild(d)}}
+function bEncode(){try{el('eCikis').value=btoa(unescape(encodeURIComponent(el('eGiris').value)))}catch(e){el('eCikis').value='Hata'}}
+function bDecode(){try{el('eCikis').value=decodeURIComponent(escape(atob(el('eGiris').value.trim())))}catch(e){el('eCikis').value='Gecersiz Base64'}}
+function bKopya(){var t=el('eCikis').value;if(!t){alert('Önce çevirme yapın');return}if(navigator.clipboard)navigator.clipboard.writeText(t);alert('Sonuç kopyalandı')}
+</script>
+<script>
+function krediHesap(){var P=parseFloat(el('fTutar').value)||0;var r=(parseFloat(el('fFaiz').value)||0)/100;var n=parseInt(el('fVade').value)||1;if(n<1)n=1;var t=r===0?P/n:P*r/(1-Math.pow(1+r,-n));var top=t*n;el('fTaksit').textContent=fmtSayi(t)+' TL';el('fToplam').textContent=fmtSayi(top)+' TL';el('fFaizT').textContent=fmtSayi(top-P)+' TL';var yillik=(Math.pow(1+r,12)-1)*100;el('fOran').textContent='%'+yillik.toFixed(1);el('fTavsiye').textContent=top-P>P*0.6?'Pahalı: vadeyi kısaltın':top-P>P*0.3?'Orta: karşılaştırın':'Uygun görünüyor'}
+function kdvHesap(){var t=parseFloat(el('vTutar').value)||0;var o=parseFloat(el('vOran').value)||20;var m=el('vIslem').value;var net,tax,brut;if(m==='ekle'){net=t;tax=t*o/100;brut=t+tax}else{brut=t;net=t/(1+o/100);tax=brut-net}el('vNet').textContent=net.toLocaleString('tr-TR',{minimumFractionDigits:2})+' TL';el('vKdv').textContent=tax.toLocaleString('tr-TR',{minimumFractionDigits:2})+' TL';el('vBrut').textContent=brut.toLocaleString('tr-TR',{minimumFractionDigits:2})+' TL'}
+function vkiHesap(){var b=(parseFloat(el('wBoy').value)||0)/100;var k=parseFloat(el('wKilo').value)||0;if(!b||!k){el('wSonuc').textContent='-';return}var v=k/(b*b);el('wSonuc').textContent=v.toFixed(1).replace('.',',');el('wDurum').textContent=v<18.5?'Zayıf':v<25?'Normal':v<30?'Kilolu':'Obez';el('wIdeal').textContent=(18.5*b*b).toFixed(0)+'–'+(24.9*b*b).toFixed(0)+' kg'}
+function yuzdeHesap(){var a=parseFloat(el('ySayi').value)||0;var b=parseFloat(el('yOran').value)||0;var m=el('yIslem').value;var s,ac;if(m==='yuzde'){s=a*b/100;ac=a+' sayısının %'+b+"'si"}else if(m==='indirim'){s=a-(a*b/100);ac='%'+b+' indirimli fiyat'}else{s=a+(a*b/100);ac='%'+b+' zamlı fiyat'}el('ySonuc').textContent=s.toLocaleString('tr-TR')+' TL';el('yAciklama').textContent=ac}
+function yasHesap(){var d=new Date(el('gTarih').value);if(isNaN(d)){alert('Geçerli tarih seçin');return}var now=new Date();var y=now.getFullYear()-d.getFullYear();var md=now.getMonth()-d.getMonth();if(md<0||(md===0&&now.getDate()<d.getDate()))y--;var gun=Math.floor((now-d)/86400000);el('gYas').textContent=y;el('gGun').textContent=gun.toLocaleString('tr-TR');var m=d.getMonth()+1,dd=d.getDate();var burc=(m===1&&dd>=20||m===2&&dd<=18)?'Kova':(m===2&&dd>=19||m===3&&dd<=20)?'Balık':(m===3&&dd>=21||m===4&&dd<=19)?'Koç':(m===4&&dd>=20||m===5&&dd<=20)?'Boğa':(m===5&&dd>=21||m===6&&dd<=20)?'İkizler':(m===6&&dd>=21||m===7&&dd<=22)?'Yengeç':(m===7&&dd>=23||m===8&&dd<=22)?'Aslan':(m===8&&dd>=23||m===9&&dd<=22)?'Başak':(m===9&&dd>=23||m===10&&dd<=22)?'Terazi':(m===10&&dd>=23||m===11&&dd<=21)?'Akrep':(m===11&&dd>=22||m===12&&dd<=21)?'Yay':'Oğlak';el('gBurc').textContent=burc}
+function ac(id){el(id).classList.add('on')}
+function kapat(id){el(id).classList.remove('on')}
+function kabul(){try{localStorage.setItem('fz','1')}catch(e){} el('cbar').classList.remove('on')}
+function bulten(){var v=el('nMail').value;if(!v||v.indexOf('@')<0){el('nMsg').textContent='Geçerli e-posta girin';return}el('nMsg').textContent='Kayıt alındı, teşekkürler!';el('nMail').value=''}
+var kZaman=0,kTimer=null;
+function kYaz(ms){var d=Math.floor(ms/100);var sn=Math.floor(ms/1000);return String(Math.floor(sn/60)).padStart(2,'0')+':'+String(sn%60).padStart(2,'0')+'.'+(d%10)}
+function kBasla(){if(kTimer)return;var bas=Date.now()-kZaman;kTimer=setInterval(function(){kZaman=Date.now()-bas;el('kSure2').textContent=kYaz(kZaman)},100)}
+function kDur(){if(kTimer){clearInterval(kTimer);kTimer=null}}
+function kSifirla(){kDur();kZaman=0;el('kSure2').textContent='00:00.0'}
+var gTimer=null,gKalan=25*60;
+function gYaz(){var m=Math.floor(gKalan/60),s=gKalan%60;el('gSayac').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')}
+function bip(){try{var ctx=new (window.AudioContext||window.webkitAudioContext)();var o=ctx.createOscillator();o.connect(ctx.destination);o.frequency.value=880;o.start();o.stop(ctx.currentTime+0.5)}catch(e){}}
+function gBasla(){if(gTimer)clearInterval(gTimer);gKalan=(parseInt(el('gDakika').value,10)||25)*60;gYaz();gTimer=setInterval(function(){gKalan--;gYaz();if(gKalan<=0){clearInterval(gTimer);gTimer=null;bip();alert('Süre doldu!')}},1000)}
+window.addEventListener('scroll',function(){var h=document.documentElement;var max=h.scrollHeight-h.clientHeight;var p=max>0?h.scrollTop/max*100:0;el('pbar').style.width=p+'%';el('topbtn').style.display=h.scrollTop>600?'block':'none'},{passive:true});
+window.onload=function(){analiz();sifreUret();sistemDoldur();qrUret();renkGuncelle();paletUret();krediHesap();kdvHesap();vkiHesap();yuzdeHesap();yasHesap();var gz=false;try{gz=localStorage.getItem('fz')==='1'}catch(e){}if(!gz)setTimeout(function(){el('cbar').classList.add('on')},1500)};
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Kelime sayacı boşlukları sayar mı?","acceptedAnswer":{"@type":"Answer","text":"İki ayrı sayaç vardır: Karakter boşluklu, Boşluksuz ise boşluksuz sayar."}},{"@type":"Question","name":"Bu araçlar ücretsiz mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. Tüm araçlar ücretsizdir, kayıt gerekmez."}},{"@type":"Question","name":"Şifrelerim sunucuya gönderiliyor mu?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Tüm işlemler tarayıcınızda yapılır."}},{"@type":"Question","name":"KDV nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"KDV ekleme: Brüt = Net x (1+oran). KDV çıkarma: Net = Brüt / (1+oran)."}},{"@type":"Question","name":"VKİ nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"VKİ = kilo / boy² (boy metre cinsinden). 18,5-24,9 arası normal kabul edilir."}}]}</script>
+</body>
+</html>
